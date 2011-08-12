@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * This is the model class for table "t_ac_prod".
+ *
+ * The followings are the available columns in table 't_ac_prod':
+ * @property integer $id
+ * @property integer $catid
+ * @property string $title
+ * @property string $content
+ * @property string $image_url
+ * @property string $description
+ * @property string $create_date
+ */
+class Prod extends CActiveRecord
+{
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	public function tableName()
+	{
+		return 't_ac_prod';
+	}
+
+	public function rules()
+	{
+		return array(
+			array('catid, title , content', 'required'),
+			array('catid', 'numerical', 'integerOnly'=>true),
+			array('title', 'length', 'max'=>32),
+			array('image_url', 'length', 'max'=>256),
+			array('description', 'length', 'max'=>1024),
+			// The following rule is used by search().
+			// Please remove those attributes that should not be searched.
+			array('id, catid, title, content, image_url, description, create_date', 'safe', 'on'=>'search'),
+		);
+	}
+
+	public function relations()
+	{
+		return array(
+			'catalog' => array(self::BELONGS_TO,'Catalog','catid'),
+		);
+	}
+
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'ID',
+			'catid' => '产品分类',
+			'title' => '标题',
+			'content' => '内容',
+			'image_url' => '图片URL',
+			'description' => '备注',
+			'create_date' => '创建时间',
+		);
+	}
+
+	public function search()
+	{
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('catid',$this->catid);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('content',$this->content,true);
+		$criteria->compare('image_url',$this->image_url,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('create_date',$this->create_date,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
+	public function getCatalogOptions()
+	{
+		return array(
+			'1'=>'产品介绍',
+			'2'=>'节能环保',
+			'3'=>'施工安装',
+			'4'=>'保养维修',
+			'5'=>'工程案例',
+			'6'=>'行业新闻',
+		);
+	}
+}

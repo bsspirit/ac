@@ -1,0 +1,9 @@
+.buildpath
+.project
+.settings/*
+assets/*
+images/*
+*.log
+**/*.log
+**/**/*.log
+**/**/**/*.log

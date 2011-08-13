@@ -21,19 +21,19 @@ class SiteController extends Controller
 		);
 	}
 	
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('*'),
-				'users'=>array('*'),
-			),
-			
-//			array('deny',  // deny all users
+//	public function accessRules()
+//	{
+//		return array(
+//			array('allow',  // allow all users to perform 'index' and 'view' actions
+//				'actions'=>array('*'),
 //				'users'=>array('*'),
 //			),
-		);
-	}
+//			
+////			array('deny',  // deny all users
+////				'users'=>array('*'),
+////			),
+//		);
+//	}
 
 	/*
 	 * 招聘信息

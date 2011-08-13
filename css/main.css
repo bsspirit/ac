@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial, Helvetica, sans-serif;
-	background: #EFEFEF;
+	background-color:#ffffff;
 }
 
 #page {
@@ -30,9 +30,9 @@ body {
 #footer {
 	padding: 10px;
 	margin: 10px 20px;
-	font-size: 0.8em;
+	font-size: 1em;
 	text-align: center;
-	border-top: 1px solid #C9E0ED;
+	/*border-top: 1px solid #C9E0ED;*/
 }
 
 #logo {
@@ -201,3 +201,16 @@ div.search-form {
 .h150{height:150px;}
 .pic_ul{list-style-type:none;padding:0;margin:0;}
 .pic_ul li{margin:10px 5px;padding:0;display: inline;}
+
+
+#header1{background:url("bg_logo.png") repeat-x scroll 0 0 #FFFFFF;height:75px;}
+#header1 .header-content, #header2{width:950px;text-align:center;margin:0 auto;}
+#header1 .logo{width:700px;text-align:left;float:left;}
+#header1 .logo-link{float:right;margin:26px;}
+#header2 .banner{background:url("banner.jpg") repeat-x scroll 0 0 #FFFFFF;height:167px;}
+#header2 .nav a{font-size:12px;color:#AA2434;font-weight:bold;}
+#footer .nav{margin:15px 0;}
+#footer .nav a{font-size:12px;color:#AA2434;font-weight:bold;}
+#footer .footer-content{/*border:solid 1px #dfdfdf;background:url("bg.png") repeat-x scroll 0 0 #FFFFFF;*/height:90px;margin:20px auto 0;text-align:center;}
+#footer .footer-content .logo{float:left;margin:20px 10px 20px 150px;}
+#footer .footer-content .copyright{float:left;margin:20px 5px;line-height:25px;}

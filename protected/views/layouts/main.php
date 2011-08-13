@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta name="language" content="zh_CN" />
 
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
@@ -18,12 +18,60 @@
 </head>
 
 <body>
-
-<div class="container" id="page">
-
+<div id="header1">
+	<div class="header-content">
+		<div class="logo">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"/>
+		</div>
+		<div class="logo-link">
+			[<a href="#">设为首页</a>] 
+			[<a href="#">加入收藏</a>]
+		</div>
+	</div>
+</div>
+	
+<div class="container">
+	<div id="header2">
+		<div class="banner"></div>
+		<div class="nav">
+			<table width="968" height="51" cellspacing="0" cellpadding="0" border="0" align="center">
+				<tr>
+					<td width="19"><img width="22" height="54" src="<?php echo Yii::app()->request->baseUrl; ?>/images/nav1.jpg"/></td>
+					<td background="<?php echo Yii::app()->request->baseUrl; ?>/images/nav2.jpg">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+						        <td align="center"><?php echo CHtml::link('首  页', array('site/index'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('公司简介', array('site/page', 'view'=>'about'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('产品介绍', array('prod/intro'))?></td>
+						        <td align="center">|</td>
+								<td align="center"><?php echo CHtml::link('产品介绍', array('prod/saving'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('施工安装', array('prod/setup'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('维修保养', array('prod/maintain'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('工程案例', array('prod/case'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('行业新闻', array('prod/news'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('招聘信息', array('site/job'))?></td>
+						        <td align="center">|</td>
+						        <td align="center"><?php echo CHtml::link('联系我们', array('site/contact'))?></td>
+							</tr>
+						</table>
+					</td>
+					<td width="19"><img width="24" height="54" src="<?php echo Yii::app()->request->baseUrl; ?>/images/nav3.jpg"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+<!-- 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+	</div>
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -42,7 +90,8 @@
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
-	</div><!-- mainmenu -->
+	</div>
+-->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -52,10 +101,26 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+		<div class="nav">
+			<?php echo CHtml::link('公司简介', array('site/page', 'view'=>'about'))?>|
+			<?php echo CHtml::link('产品介绍', array('prod/intro'))?>|
+			<?php echo CHtml::link('北京开利空调施工安装', array('prod/setup'))?>|
+			<?php echo CHtml::link('北京开利空调保养维修', array('prod/maintain'))?>|
+			<?php echo CHtml::link('北京开利空调工程案例', array('prod/case'))?>|
+			<?php echo CHtml::link('北京开利空调行业新闻', array('prod/news'))?>|
+			<?php echo CHtml::link('招聘信息', array('site/job'))?>|
+			<?php echo CHtml::link('联系我们', array('site/contact'))?>
+		</div>
+		<div class="footer-content">
+			<div class="logo">
+				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.jpg"/>
+			</div>
+			<div class="copyright">
+			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备XXXXXX号<br/>
+				电话：010-67186799 67187099    Email：ac_carrier@sina.com<br/>
+			</div>
+		</div>
+	</div>
 
 </div><!-- page -->
 

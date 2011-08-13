@@ -15,8 +15,22 @@ class SiteController extends Controller
 //			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
-//			'page'=>array(
-//				'class'=>'CViewAction',
+			'page'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
+	
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('*'),
+				'users'=>array('*'),
+			),
+			
+//			array('deny',  // deny all users
+//				'users'=>array('*'),
 //			),
 		);
 	}

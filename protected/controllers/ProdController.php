@@ -44,12 +44,6 @@ class ProdController extends Controller
 		);
 	}
 	
-	public function filterIntro($filterChain)
-	{
-		echo 'filter';
-		$filterChain->run();
-	}
-	
 	/*
 	 * 产品介绍,1
 	 */

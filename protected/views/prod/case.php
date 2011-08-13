@@ -3,10 +3,13 @@ $this->breadcrumbs=array(
 	'工程案例',
 );
 
-$this->menu=array(
-	array('label'=>'Create Prod', 'url'=>array('create')),
-	array('label'=>'Manage Prod', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'Create Prod', 'url'=>array('create')),
+//	array('label'=>'Manage Prod', 'url'=>array('admin')),
+//);
+
+$this->menu=array('contact','intro');
+
 ?>
 
 <h1>工程案例</h1>

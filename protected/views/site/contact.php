@@ -3,6 +3,7 @@ $this->pageTitle=Yii::app()->name . ' - 联系我们';
 $this->breadcrumbs=array(
 	'联系我们',
 );
+$this->menu=array('contact','intro');
 ?>
 
 <h1>北京奥诚兴业科技发展有限公司</h1>

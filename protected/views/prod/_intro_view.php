@@ -11,11 +11,7 @@
 	  		<table width="100%" cellspacing="0" cellpadding="0" border="0">
 				<tr>
 		  			<td width="80" height="22" class="t12b">产品名称：</td>
-		  			<td>
-						<a target="_blank" title="<?php echo CHtml::encode($data->title); ?>" href="detail/pid/<?php echo $data->id?>">		  			
-							<?php echo CHtml::encode($data->title); ?>
-						</a>
-					</td>
+					<td><?php echo CHtml::link(CHtml::encode($data->title), array('prod/detail','pid'=>$data->id), array('target'=>'_blank'))?></td>
 				</tr>
 				<tr>
 					<td height="22" class="t12b">&nbsp;</td>

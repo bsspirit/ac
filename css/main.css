@@ -24,7 +24,7 @@ body {
 }
 
 #sidebar {
-	padding: 20px 20px 20px 0;
+	padding: 20px 6px 20px 0;
 }
 
 #footer {
@@ -214,3 +214,9 @@ div.search-form {
 #footer .footer-content{/*border:solid 1px #dfdfdf;background:url("bg.png") repeat-x scroll 0 0 #FFFFFF;*/height:90px;margin:20px auto 0;text-align:center;}
 #footer .footer-content .logo{float:left;margin:20px 10px 20px 150px;}
 #footer .footer-content .copyright{float:left;margin:20px 5px;line-height:25px;}
+
+.mybox{background:url("bg.png") repeat scroll 0 0 #FFFFFF;border:solid 1px #dfdfdf;text-align:left;margin-bottom:20px;}
+.mybox .title{margin:10px 5px;padding-left:30px;background-image:url("box_logo.jpg");line-height:30px;}
+.mybox .title .name{font-size: 14px;}
+.mybox .content{line-height:20px;margin:8px 5px 5px;padding:5px;}
+.mybox p{margin:3px 5px;}

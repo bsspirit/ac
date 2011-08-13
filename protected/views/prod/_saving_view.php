@@ -9,9 +9,7 @@
   		<td valign="top">
 	  		<table width="100%" cellspacing="0" cellpadding="0" border="0">
 				<tr>
-		  			<td>
-						<?php echo CHtml::link(CHtml::encode($data->title), array('prod/detail','pid'=>$data->id), array('target'=>'_blank'))?>
-					</td>
+		  			<td><?php echo CHtml::link(CHtml::encode($data->title), array('prod/detail','pid'=>$data->id), array('target'=>'_blank'))?></td>
 				</tr>
 				<tr>
 			  		<td rowspan="2"><?php echo CHtml::encode($data->description); ?></td>

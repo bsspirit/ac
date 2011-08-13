@@ -3,6 +3,8 @@ $this->pageTitle=Yii::app()->name . ' - 招聘信息';
 $this->breadcrumbs=array(
 	'招聘信息',
 );
+
+$this->menu=array('contact','intro');
 ?>
 <h1>招聘信息</h1>
 

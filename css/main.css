@@ -199,5 +199,5 @@ div.search-form {
 .c{clear:both;}
 .w160{width:160px;}
 .h150{height:150px;}
-#content ul{list-style-type:none;padding:0;margin:0;}
-#content ul li{margin:10px 5px;padding:0;display: inline;}
+.pic_ul{list-style-type:none;padding:0;margin:0;}
+.pic_ul li{margin:10px 5px;padding:0;display: inline;}

@@ -1,6 +1,5 @@
 <div class="view">
-
-	<ul>
+	<ul class="pic_ul">
 	<?php foreach($rows as $row){?>
 		<li class="l w160 h150">
 			<a href="detail/pid/<?php echo $row->id?>">

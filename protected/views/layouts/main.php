@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang=zh_CN lang="zh_CN">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="zh_CN" />
@@ -40,9 +40,9 @@
 					<td background="<?php echo Yii::app()->request->baseUrl; ?>/images/nav2.jpg">
 						<table width="100%" cellspacing="0" cellpadding="0" border="0">
 							<tr>
-						        <td align="center"><?php echo CHtml::link('首  页', array('site/index'))?></td>
+						        <td align="center"><?php echo CHtml::link('首  页', array('default/index'))?></td>
 						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('公司简介', array('site/page', 'view'=>'about'))?></td>
+						        <td align="center"><?php echo CHtml::link('公司简介', array('site/about'))?></td>
 						        <td align="center">|</td>
 						        <td align="center"><?php echo CHtml::link('产品介绍', array('prod/intro'))?></td>
 						        <td align="center">|</td>
@@ -102,7 +102,7 @@
 
 	<div id="footer">
 		<div class="nav">
-			<?php echo CHtml::link('公司简介', array('site/page', 'view'=>'about'))?>|
+			<?php echo CHtml::link('公司简介', array('site/about'))?>|
 			<?php echo CHtml::link('产品介绍', array('prod/intro'))?>|
 			<?php echo CHtml::link('北京开利空调施工安装', array('prod/setup'))?>|
 			<?php echo CHtml::link('北京开利空调保养维修', array('prod/maintain'))?>|
@@ -110,6 +110,14 @@
 			<?php echo CHtml::link('北京开利空调行业新闻', array('prod/news'))?>|
 			<?php echo CHtml::link('招聘信息', array('site/job'))?>|
 			<?php echo CHtml::link('联系我们', array('site/contact'))?>
+			<?php 
+				echo '|';
+				if(Yii::app()->user->isGuest){
+					echo CHtml::link('管理员登陆', array('/site/login'));
+				} else {
+					echo CHtml::link('退出登陆', array('/site/logout'));
+				}
+			?>
 		</div>
 		<div class="footer-content">
 			<div class="logo">

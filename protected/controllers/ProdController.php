@@ -75,7 +75,7 @@ class ProdController extends Controller
 	 */
 	public function actionSetup()
 	{
-		$dataProvider=$this->getProdsByCatId(3,20);
+		$dataProvider=$this->getProdsByCatId(3,2000);
 		$this->render('setup',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -85,7 +85,7 @@ class ProdController extends Controller
 	 */
 	public function actionMaintain()
 	{
-		$dataProvider=$this->getProdsByCatId(4,20);
+		$dataProvider=$this->getProdsByCatId(4,2000);
 		$this->render('maintain',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -95,7 +95,7 @@ class ProdController extends Controller
 	 */
 	public function actionCase()
 	{
-		$dataProvider=$this->getProdsByCatId(5,20);
+		$dataProvider=$this->getProdsByCatId(5,2000);
 		$this->render('case',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -105,7 +105,7 @@ class ProdController extends Controller
 	 */
 	public function actionNews()
 	{
-		$dataProvider=$this->getProdsByCatId(6,20);
+		$dataProvider=$this->getProdsByCatId(6,40);
 		$this->render('news',array(
 			'dataProvider'=>$dataProvider,
 		));

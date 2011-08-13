@@ -11,6 +11,6 @@ $this->menu=array(
 
 <h1>工程案例</h1>
 
-<?php $this->widget('application.widgets.testWidget',array(
+<?php $this->widget('application.widgets.picWidget',array(
 	'dataProvider'=>$dataProvider,
 )); ?>

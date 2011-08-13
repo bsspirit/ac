@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'YII学习网',//'奥诚兴业',
+	'name'=>'奥诚兴业',
 	'language'=>'zh_cn',
 
 	// preloading 'log' component
@@ -52,8 +52,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=aocheng',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'aocheng',
+			'password' => 'aocheng',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

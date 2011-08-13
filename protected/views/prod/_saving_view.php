@@ -3,7 +3,7 @@
 	<tr>
   		<td width="150" valign="top" height="100">
   			<a target="_blank" title="<?php echo CHtml::encode($data->title); ?>" href="detail/pid/<?php echo $data->id?>">
-  				<img width="128" height="107" border="0" src="<?php echo CHtml::encode($data->image_url); ?>"/>
+  				<img width="128" height="107" border="0" src="<?php echo Yii::app()->request->baseUrl . $data->image_url ?>"/>
   			</a>
   		</td>
   		<td valign="top">

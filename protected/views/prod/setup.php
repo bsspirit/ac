@@ -11,7 +11,6 @@ $this->menu=array(
 
 <h1>施工安装</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('application.widgets.picWidget',array(
 	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
 )); ?>

@@ -2,7 +2,7 @@
 	<ul class="pic_ul">
 	<?php foreach($rows as $row){?>
 		<li class="l w160 h150">
-			<a href="detail/pid/<?php echo $row->id?>">
+			<a href="../prod/detail/pid/<?php echo $row->id?>">
 				<img width="140" height="115" alt="<?php echo $row->title?>" src="<?php echo Yii::app()->request->baseUrl.$row->image_url?>"/>
 			</a>
 			<br/>

@@ -3,12 +3,11 @@ $this->breadcrumbs=array(
 	'产品介绍',
 );
 
-//$this->menu=array(
-//	array('label'=>'Create Prod', 'url'=>array('create')),
-//	array('label'=>'Manage Prod', 'url'=>array('admin')),
-//);
-
-$this->menu=array('contact','intro');
+$this->menu=array(
+	'contact'=>array(), 
+	'intro'=>array(),
+	'friend'=>array(),
+);
 ?>
 
 <h1>产品介绍</h1>

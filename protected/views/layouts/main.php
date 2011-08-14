@@ -13,6 +13,9 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/easySlider1.7.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -46,7 +49,7 @@
 						        <td align="center">|</td>
 						        <td align="center"><?php echo CHtml::link('产品介绍', array('prod/intro'))?></td>
 						        <td align="center">|</td>
-								<td align="center"><?php echo CHtml::link('产品介绍', array('prod/saving'))?></td>
+								<td align="center"><?php echo CHtml::link('节能环保', array('prod/saving'))?></td>
 						        <td align="center">|</td>
 						        <td align="center"><?php echo CHtml::link('施工安装', array('prod/setup'))?></td>
 						        <td align="center">|</td>

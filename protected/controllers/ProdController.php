@@ -119,7 +119,7 @@ class ProdController extends Controller
 				'select'=>'id, catid, title, content, image_url, description, create_date',
 				'condition'=>' catid = :catid',
 				'params'=>array(':catid'=>$catid),
-				'order'=>'id desc',
+				'order'=>'create_date desc',
 			),
 			'pagination'=>array(
 			    'pageSize'=>$page,
@@ -236,13 +236,13 @@ class ProdController extends Controller
 //	 * If the data model is not found, an HTTP exception will be raised.
 //	 * @param integer the ID of the model to be loaded
 //	 */
-//	public function loadModel($id)
-//	{
-//		$model=Prod::model()->findByPk($id);
-//		if($model===null)
-//			throw new CHttpException(404,'The requested page does not exist.');
-//		return $model;
-//	}
+	public function loadModel($id)
+	{
+		$model=Prod::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
 //
 //	/**
 //	 * Performs the AJAX validation.

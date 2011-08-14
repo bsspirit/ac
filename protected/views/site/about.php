@@ -4,7 +4,11 @@ $this->breadcrumbs=array(
 	'公司介绍',
 );
 
-$this->menu=array('contact','intro');
+$this->menu=array(
+	'contact'=>array(), 
+	'intro'=>array(),
+	'friend'=>array(),
+);
 ?>
 <h1>公司介绍</h1>
 

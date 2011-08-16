@@ -1,8 +1,8 @@
 <?php
 $this->breadcrumbs=array(
-	'Prods'=>array('index'),
+	'产品列表'=>array('index'),
 	$model->title=>array('view','id'=>$model->id),
-	'Update',
+	'更新',
 );
 
 $this->menu=array(
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Prod <?php echo $model->id; ?></h1>
+<h1>产品更新<?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

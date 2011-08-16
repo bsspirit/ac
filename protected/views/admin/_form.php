@@ -1,3 +1,13 @@
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/wymeditor/jquery.wymeditor.pack.js"></script>
+<script type="text/javascript"> 
+jQuery(function() {
+    jQuery('.wymeditor').wymeditor();
+
+    function submit(){
+		alert('faefae');
+    }
+});
+</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -29,7 +39,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<textarea class="wymeditor" name="Prod[content]"><?php echo CHtml::encode($model->content)?></textarea>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 
@@ -40,7 +50,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? '创建' : '保存'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? '创建' : '保存' ,array('onclick'=>'jQuery.wymeditors(0).update();')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

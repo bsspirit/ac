@@ -124,7 +124,7 @@
 		</div>
 		<div class="footer-content">
 			<div class="logo">
-				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.jpg"/>
+				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.png"/>
 			</div>
 			<div class="copyright">
 			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备XXXXXX号<br/>

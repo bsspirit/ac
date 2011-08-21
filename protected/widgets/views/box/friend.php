@@ -9,5 +9,7 @@
 		<p><a href="#"><img width="180" src="<?php echo Yii::app()->request->baseUrl; ?>/upfiles/friend/4.jpg"/></a></p>
 		<p><a href="#"><img width="180" src="<?php echo Yii::app()->request->baseUrl; ?>/upfiles/friend/5.jpg"/></a></p>
 		<p><a href="#"><img width="180" src="<?php echo Yii::app()->request->baseUrl; ?>/upfiles/friend/6.jpg"/></a></p>
+		<p><a href="#"><img width="180" src="<?php echo Yii::app()->request->baseUrl; ?>/upfiles/friend/11.jpg"/></a></p>
+		<p><a href="#"><img width="180" src="<?php echo Yii::app()->request->baseUrl; ?>/upfiles/friend/12.jpg"/></a></p>
 	 </div> 
 </div>

@@ -223,6 +223,7 @@ div.search-form {
 .mybox .title{margin:10px 5px;padding-left:30px;background-image:url("box_logo.jpg");line-height:30px;}
 .mybox .title .name{font-size: 14px;}
 .mybox .content{line-height:20px;margin:8px 5px 5px;padding:5px;}
+.mybox .font-letter{letter-spacing:3px;}
 .mybox p{margin:10px 5px;}
 .mybox li{line-height:22px;border-bottom: 1px dashed #DFDFDF;};
 

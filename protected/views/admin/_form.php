@@ -45,7 +45,7 @@ jQuery(function() {
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50, 'size'=>60,'maxlength'=>1024)); ?>
+		<textarea class="wymeditor" name="Prod[description]"><?php echo CHtml::encode($model->description)?></textarea>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 

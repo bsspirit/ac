@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Prods'=>array('index'),
-	'Create',
+	'产品列表'=>array('index'),
+	'增加产品',
 );
 
 $this->menu=array(
-	array('label'=>'List Prod', 'url'=>array('index')),
-	array('label'=>'Manage Prod', 'url'=>array('admin')),
+	array('label'=>'产品列表', 'url'=>array('index')),
+	array('label'=>'产品管理', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Prod</h1>
+<h1>增加产品</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

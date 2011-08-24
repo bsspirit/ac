@@ -84,10 +84,15 @@ class Prod extends CActiveRecord
 			'4'=>'保养维修',
 			'5'=>'工程案例',
 			'6'=>'行业新闻',
+			'7'=>'未分类',
 		);
 		
 		if(!empty($key)){
-			return $cat[$key]; 
+			if(array_key_exists($key,$cat)){
+				return $cat[$key]; 
+			} else {
+				return $cat['7'];
+			}
 		}
 		
 		return $cat;

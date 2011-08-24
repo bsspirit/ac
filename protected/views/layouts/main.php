@@ -27,8 +27,8 @@
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"/>
 		</div>
 		<div class="logo-link">
-			[<a href="#">设为首页</a>] 
-			[<a href="#">加入收藏</a>]
+			[<a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ac-999.com');">设为首页</a>] 
+			[<a href="#" onclick="window.external.AddFavorite(location.href,document.title);">加入收藏</a>]
 			<?php 
 			if(!Yii::app()->user->isGuest){
 				echo '['.CHtml::link('管理员界面', array('/admin')).']';

@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Prods'=>array('index'),
+	'产品列表'=>array('index'),
 	$model->title,
 );
 
 $this->menu=array(
-	array('label'=>'List Prod', 'url'=>array('index')),
-	array('label'=>'Create Prod', 'url'=>array('create')),
-	array('label'=>'Update Prod', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Prod', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Prod', 'url'=>array('admin')),
+	array('label'=>'产品列表', 'url'=>array('index')),
+	array('label'=>'增加产品', 'url'=>array('create')),
+	array('label'=>'更新产品', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'删除产品', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'确认删除产品!')),
+	array('label'=>'管理产品', 'url'=>array('admin')),
 );
 ?>
 

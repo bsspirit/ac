@@ -13,17 +13,24 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Prod #<?php echo $model->id; ?></h1>
+<h1>详细信息 #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'catid',
+		array(
+			'name'=>'catid',
+			'value'=>$model->getCatalogOptions($model->catid),
+		),
 		'title',
-		'content',
 		'image_url',
-		'description',
 		'create_date',
 	),
 )); ?>
+
+<b>内容：</b>
+<div class="myview"><?php echo $model->content?></div>
+<b>备注:</b>
+<div class="myview"><?php echo $model->description?></div>
+

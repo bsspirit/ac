@@ -75,9 +75,9 @@ class Prod extends CActiveRecord
 		));
 	}
 	
-	public function getCatalogOptions()
+	public function getCatalogOptions($key=null)
 	{
-		return array(
+		$cat = array(
 			'1'=>'产品介绍',
 			'2'=>'节能环保',
 			'3'=>'施工安装',
@@ -85,5 +85,11 @@ class Prod extends CActiveRecord
 			'5'=>'工程案例',
 			'6'=>'行业新闻',
 		);
+		
+		if(!empty($key)){
+			return $cat[$key]; 
+		}
+		
+		return $cat;
 	}
 }

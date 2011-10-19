@@ -26,6 +26,7 @@ $('.search-form form').submit(function(){
 <h1>产品管理</h1>
 
 <?php echo CHtml::link('高级搜索','#',array('class'=>'search-button')); ?>
+
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -35,17 +36,19 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'prod-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'catid',
+		//'$data->catelog->name',
 		'title',
-		'content',
-		'image_url',
-		'description',
-		/*
-		'create_date',
-		*/
+		//'content',
+		array(
+			'header'=>'图片',
+			'value'=>'$data->image_url'
+		),
+		//'description',
+		//'create_date',
 		array(
 			'class'=>'CButtonColumn',
 		),

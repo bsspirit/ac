@@ -19,29 +19,31 @@
 		<?php echo $form->label($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
-
+<!-- 
 	<div class="row">
 		<?php echo $form->label($model,'content'); ?>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
+ -->
 
 	<div class="row">
 		<?php echo $form->label($model,'image_url'); ?>
 		<?php echo $form->textField($model,'image_url',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
 
+<!-- 
 	<div class="row">
 		<?php echo $form->label($model,'description'); ?>
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>1024)); ?>
 	</div>
-
 	<div class="row">
 		<?php echo $form->label($model,'create_date'); ?>
 		<?php echo $form->textField($model,'create_date'); ?>
 	</div>
+ -->
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('搜索'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

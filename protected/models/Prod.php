@@ -77,23 +77,28 @@ class Prod extends CActiveRecord
 	
 	public function getCatalogOptions($key=null)
 	{
-		$cat = array(
-			'1'=>'产品介绍',
-			'2'=>'节能环保',
-			'3'=>'施工安装',
-			'4'=>'保养维修',
-			'5'=>'工程案例',
-			'6'=>'行业新闻',
-			'7'=>'未分类',
-		);
+		$cat = array();
 		
-		if(!empty($key)){
-			if(array_key_exists($key,$cat)){
-				return $cat[$key]; 
-			} else {
-				return $cat['7'];
-			}
-		}
+		$p = new Prod();
+		
+		
+//		$cat = array(
+//			'1'=>'产品介绍',
+//			'2'=>'节能环保',
+//			'3'=>'施工安装',
+//			'4'=>'保养维修',
+//			'5'=>'工程案例',
+//			'6'=>'行业新闻',
+//			'7'=>'未分类',
+//		);
+//		
+//		if(!empty($key)){
+//			if(array_key_exists($key,$cat)){
+//				return $cat[$key]; 
+//			} else {
+//				return $cat['7'];
+//			}
+//		}
 		
 		return $cat;
 	}

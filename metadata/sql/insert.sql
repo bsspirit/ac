@@ -42,6 +42,17 @@ insert into t_ac_catalog(id,name) values(34,"其它");
 
 
 #上下级关系
+insert into t_ac_catalog_rel(pid,sid) values(0,1);
+insert into t_ac_catalog_rel(pid,sid) values(0,2);
+insert into t_ac_catalog_rel(pid,sid) values(0,3);
+insert into t_ac_catalog_rel(pid,sid) values(0,4);
+insert into t_ac_catalog_rel(pid,sid) values(0,5);
+insert into t_ac_catalog_rel(pid,sid) values(0,6);
+insert into t_ac_catalog_rel(pid,sid) values(0,7);
+insert into t_ac_catalog_rel(pid,sid) values(0,8);
+insert into t_ac_catalog_rel(pid,sid) values(0,9);
+insert into t_ac_catalog_rel(pid,sid) values(0,10);
+
 insert into t_ac_catalog_rel(pid,sid) values(1,11);
 insert into t_ac_catalog_rel(pid,sid) values(1,12);
 insert into t_ac_catalog_rel(pid,sid) values(1,13);

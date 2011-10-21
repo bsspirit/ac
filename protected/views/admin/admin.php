@@ -36,19 +36,18 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'prod-grid',
 	'dataProvider'=>$model->search(),
-	//'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'catid',
-		//'$data->catelog->name',
+		array(
+			'name'=>'catid',
+			'header'=>'分类 ',
+			'value'=>'empty($data->catalog->name)?"未分类":$data->catalog->name',
+		),
 		'title',
-		//'content',
 		array(
 			'header'=>'图片',
 			'value'=>'$data->image_url'
 		),
-		//'description',
-		//'create_date',
 		array(
 			'class'=>'CButtonColumn',
 		),

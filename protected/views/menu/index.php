@@ -1,84 +1,63 @@
 <?php $basepath = Yii::app()->request->baseUrl;?>
 <link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/zTreeStyle.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/impromptu.css" media="screen, projection" />
 <script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.core-3.0.min.js"></script>
 <script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.excheck-3.0.min.js"></script>
 <script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.exedit-3.0.min.js"></script>
-<SCRIPT type="text/javascript">
-		var setting = {
-			edit: {enable: true,showRemoveBtn: false,showRenameBtn: false},
-			data: {simpleData: {enable: true}},
-			callback: {	beforeDrag: beforeDrag,beforeDrop: beforeDrop}
-		};
+<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery-impromptu.3.2.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/my/menu.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/my/popup.js"></script>
 
-		var zNodes =[
-			{ id:1, pId:0, name:"随意拖拽 父"},
-			{ id:11, pId:1, name:"随意拖拽 子 1"},
-			{ id:12, pId:1, name:"随意拖拽 子 2"},
-			{ id:121, pId:12, name:"随意拖拽 孙 1"},
-			{ id:122, pId:12, name:"随意拖拽 孙 2"},
-			{ id:123, pId:12, name:"随意拖拽 孙 3"},
-			{ id:13, pId:1, name:"禁止拖拽 子 1"},
-			{ id:131, pId:13, name:"禁止拖拽 孙 1"},
-			{ id:132, pId:13, name:"禁止拖拽 孙 2"},
-			{ id:132, pId:13, name:"随意拖拽 孙 4"},
-			{ id:2, pId:0, name:"随意拖拽 父 3"},
-			{ id:21, pId:2, name:"随意拖拽 子 3"},
-			{ id:22, pId:2, name:"禁止拖拽到我身上"},
-			{ id:221, pId:22, name:"随意拖拽 孙 5"},
-			{ id:222, pId:22, name:"随意拖拽 孙 6"},
-			{ id:223, pId:22, name:"随意拖拽 孙 7"},
-			{ id:23, pId:2, name:"随意拖拽 子 4"}
-		];
-
-		function beforeDrag(treeId, treeNodes) {
-			for (var i=0,l=treeNodes.length; i<l; i++) {
-				if (treeNodes[i].drag === false) {
-					return false;
-				}
-			}
-			return true;
-		}
-		function beforeDrop(treeId, treeNodes, targetNode, moveType) {
-			return targetNode ? targetNode.drop !== false : true;
-		}
-		
-		function setCheck() {
-			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-			zTree.setting.edit.drag.isCopy = true;
-			zTree.setting.edit.drag.isMove = true;
-			zTree.setting.edit.drag.prev = true;
-			zTree.setting.edit.drag.inner = true;
-			zTree.setting.edit.drag.next = true;
-		}
-		
-		$(document).ready(function(){
-			$.getJSON('menu/menuTree', function(data) {
-				var items = [];
-			  	$.each(data, function(key, val) {
-				  	eval('var obj ='+ val);
-			    	items.push(obj);
-			  	});
-				
-				$.fn.zTree.init($("#treeDemo"), setting, items);
-				setCheck();
-				$("#copy").bind("change", setCheck);
-				$("#move").bind("change", setCheck);
-				$("#prev").bind("change", setCheck);
-				$("#inner").bind("change", setCheck);
-				$("#next").bind("change", setCheck);
-			});
-			
-			
-		});
-	</SCRIPT>
 <h1>分类管理</h1>
 
-<div class="zTreeDemoBackground">
+<div class="tree l">
 	<ul id="treeDemo" class="ztree"></ul>
 </div>
 
-<?php 
-//foreach($tree->getData() as $node){
-//	echo $node->pid . ' : ' . $node->sid.'<br/>';
-//}
-?>
+<div class="treeside l">
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'prod-grid',
+	'dataProvider'=>$model->search(),
+	'columns'=>array(
+		'id',
+		array(
+			'header'=>'分类ID',
+			'value'=>'$data->sid',
+		),
+		array(
+			'name'=>'son',
+			'header'=>'分类名 ',
+			'value'=>'empty($data->son->name)?"未分类":$data->son->name',
+		),
+		array(
+			'name'=>'son',
+			'header'=>'父结点 ',
+			'value'=>'$data->pid==0?"一级分类":(empty($data->parent->name)?"未分类":$data->parent->name)',
+		),
+		array(
+			'header'=>'父结点ID',
+			'value'=>'$data->pid',
+		),
+		array(
+			'class'=>'CButtonColumn',
+			'header'=>'操作',
+			'buttons'=>array(
+			 	'name'=>array(
+		           	'label'=>'改名',	
+		           	'imageUrl'=>false,
+		      		'options'=>array('onclick'=>'popup_name(this)'),
+	            ),
+                'move'=>array(
+		           	'label'=>'移动',	
+		           	'imageUrl'=>false,
+	            	'options'=>array('onclick'=>'popup_move(this)'),
+	            ),
+             ),
+        	'template' =>'{name} {move}',
+            'htmlOptions'=>array(
+		        'style'=>'width:100px;'
+		    ),
+	    )
+	),
+)); ?>
+</div>

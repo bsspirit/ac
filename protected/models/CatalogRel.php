@@ -32,8 +32,8 @@ class CatalogRel extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'parent' => array(self::BELONGS_TO,'Catalog','catid'),
-			'son' => array(self::BELONGS_TO,'Catalog','catid'),
+			'parent' => array(self::BELONGS_TO,'Catalog','pid'),
+			'son' => array(self::BELONGS_TO,'Catalog','sid'),
 		);
 	}
 
@@ -55,6 +55,9 @@ class CatalogRel extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		 	'pagination'=>array(
+		        'pageSize'=>10,
+		    ),
 		));
 	}
 }

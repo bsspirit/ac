@@ -241,3 +241,5 @@ ol#controls li.current a{background:#5DC9E1;color:#fff;}
 ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
 
 .myview{border:solid 1px #DFDFDF;text-align:left;margin:10px 5px;padding:3px;}
+.tree{border:solid 1px #DFDFDF;width:20%;}
+.treeside{width:75%;margin:0 15px;}

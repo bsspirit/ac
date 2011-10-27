@@ -1,3 +1,10 @@
+<?php
+$this->breadcrumbs=array(
+	'后台管理控制台'=>array('admin/index'),
+	'上传标题图片',
+);
+?>
+
 <h1>上传标题图片</h1>
 
 <div class="row">
@@ -18,6 +25,6 @@
 <br/>
 <div class="row">
 <p>文件预览</p>
-<img src="<?php echo $model['image_url']?>"></img>
+<img src="<?php echo Yii::app()->request->baseUrl.$model['image_url']?>"></img>
 <?php }?>
 </div>

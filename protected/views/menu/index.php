@@ -8,6 +8,13 @@
 <script type="text/javascript" src="<?php echo $basepath ?>/js/menu/menu.js"></script>
 <script type="text/javascript" src="<?php echo $basepath ?>/js/menu/popup.js"></script>
 
+<?php
+$this->breadcrumbs=array(
+	'后台管理控制台'=>array('admin/index'),
+	'分类管理',
+);
+?>
+
 <h1>分类管理</h1>
 
 <div class="tree l">

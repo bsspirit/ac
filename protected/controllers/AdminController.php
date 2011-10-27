@@ -125,8 +125,9 @@ class AdminController extends Controller
 	{
 		$model=new Prod('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Prod']))
+		if(isset($_GET['Prod'])){
 			$model->attributes=$_GET['Prod'];
+		}
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -162,7 +163,7 @@ class AdminController extends Controller
 	{
 		$form = new UploadForm;
 		
-		$folder = 'upfiles/image/';
+		$folder = '/upfiles/image/';
 		$id = $_REQUEST['pid'];
 		$model = $this->loadModel($id);
 		

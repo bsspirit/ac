@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /upfiles/
 
 Sitemap: http://www.ac-999.com/sitemap.xml
 

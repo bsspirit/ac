@@ -71,12 +71,15 @@ class MenuController extends Controller{
 	/*
 	 * 下拉列表JSON
 	 */
-	public function actionMenuList(){
+	public function actionMenuList($cid=null){
 		$cats=Catalog::model()->findAll();
 		$json = array();
 		foreach ($cats as $cat){
 			$line = '{';
 			$line .='id:'.$cat->id.',name:"'.$cat->name.'"';
+			if(!empty($cid) && $cid == $cat->id){
+				$line .= ',selected:true';
+			}
 			$line .= '}';
 			array_push($json, $line);
 		}

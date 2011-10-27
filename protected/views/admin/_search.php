@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/menulist.js"></script>
+
 <div class="wide form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -7,7 +7,7 @@
 )); ?>
 
 	<div class="row">
-		<div id="catelog_list" class="row"></div>
+		<div id="catelog_list" class="row" isnull="true"></div>
 	</div>
 	
 	<div class="row">
@@ -27,3 +27,4 @@
 <?php $this->endWidget(); ?>
 
 </div>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/menulist.js"></script>

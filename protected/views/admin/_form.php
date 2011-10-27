@@ -1,28 +1,3 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/menulist.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/kindeditor-min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/zh_CN.js"></script>
-<script type="text/javascript">
-var editor_content;
-var editor_desc;
-KindEditor.ready(function(K) {
-	editor_content = K.create('textarea[name="content"]', {
-		uploadJson : 'upload',
-		fileManagerJson : 'manager',
-		allowFileManager : true
-	});
-
-	editor_desc = K.create('textarea[name="description"]', {
-		resizeType : 1,
-		allowPreviewEmoticons : false,
-		allowImageUpload : false,
-		items : [
-			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-			'insertunorderedlist', 'link']
-	});
-});
-
-</script>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -34,7 +9,7 @@ KindEditor.ready(function(K) {
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div id="catelog_list" class="row"></div>
+	<div id="catelog_list" class="row" select="<?php echo $model->catid?>"></div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
@@ -60,4 +35,29 @@ KindEditor.ready(function(K) {
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/menulist.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/kindeditor-min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/zh_CN.js"></script>
+<script type="text/javascript">
+var editor_content;
+var editor_desc;
+KindEditor.ready(function(K) {
+	editor_content = K.create('textarea[name="content"]', {
+		uploadJson : 'upload',
+		fileManagerJson : 'manager',
+		allowFileManager : true
+	});
+
+	editor_desc = K.create('textarea[name="description"]', {
+		resizeType : 1,
+		allowPreviewEmoticons : false,
+		allowImageUpload : false,
+		items : [
+			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+			'insertunorderedlist', 'link']
+	});
+});
+
+</script>

@@ -29,7 +29,7 @@ function popup_move(obj){
 	var pid = child1.next().next().next().text();
 	
 	$.getJSON(path+'/menu/menuList', function(data) {
-	  	var txt = '<form id="form-move" method="get" action='+path+'"/menu/move">'
+	  	var txt = '<form id="form-move" method="get" action="'+path+'/menu/move">';
 			txt+= '分类名称：'+name+'<br/>';
 			if(pid==0){
 				txt+= '父节点：'+pname+'(不能移动)<br/>';

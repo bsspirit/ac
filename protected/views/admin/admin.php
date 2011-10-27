@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'产品列表'=>array('index'),
+	'后台管理控制台'=>array('admin/index'),
 	'产品管理',
 );
 
 $this->menu=array(
-	array('label'=>'产品列表', 'url'=>array('index')),
+	array('label'=>'后台管理控制台', 'url'=>array('admin/index')),
 	array('label'=>'增加产品', 'url'=>array('create')),
 );
 

@@ -5,7 +5,7 @@ CREATE TABLE t_ac_prod(
 	catid int not null,
 	title varchar(32) not null,
 	content text not null,
-	image_url varchar(256) NOT NULL DEFAULT "http://abc.com/a.jpg",
+	image_url varchar(256) NULL,
   	description varchar(1024) NULL,
 	create_date timestamp not null default now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

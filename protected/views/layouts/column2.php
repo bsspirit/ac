@@ -9,7 +9,7 @@
 		<div id="sidebar">
 		<?php
 			$this->beginWidget('zii.widgets.CPortlet', array(
-				'title'=>'Operations',
+				'title'=>'快捷导航',
 			));
 			$this->widget('zii.widgets.CMenu', array(
 				'items'=>$this->menu,

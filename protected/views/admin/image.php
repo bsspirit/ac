@@ -18,6 +18,6 @@
 <br/>
 <div class="row">
 <p>文件预览</p>
-<img src="<?php echo Yii::app()->request->baseUrl.'/'.$model['image_url']?>"></img>
+<img src="<?php echo $model['image_url']?>"></img>
 <?php }?>
 </div>

@@ -16,9 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/form.css" />
 	
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.js"></script>
-
-	<!--<script type="text/javascript" src="<?php echo $basepath ?>/js/easySlider1.7.js"></script>-->
-
+	<script type="text/javascript" src="<?php echo $basepath ?>/js/main.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 

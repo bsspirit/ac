@@ -1,17 +1,5 @@
-<?php
-$this->breadcrumbs=array(
-	'产品列表',
-);
+<h1>管理控制后台</h1>
 
-$this->menu=array(
-	array('label'=>'增加产品', 'url'=>array('create')),
-	array('label'=>'管理产品', 'url'=>array('admin')),
-);
-?>
+<?php echo CHtml::link('产品管理', array('/admin/admin'))?>&nbsp;&nbsp;
+<?php echo CHtml::link('分类管理', array('/menu'))?>
 
-<h1>产品列表</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>

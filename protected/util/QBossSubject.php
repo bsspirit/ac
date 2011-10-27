@@ -1,0 +1,98 @@
+<?php
+
+class QBossSubject
+{
+	private static $_subjects = array(
+		'1001' => array('name' => '库存现金','direction'=>'0','type'=>'0','level'=>'1'),
+		'1001001' => array('name' => '人民币','direction'=>'0','type'=>'0','level'=>'2'),
+		'1001002' => array('name' => '支票','direction'=>'0','type'=>'0','level'=>'2'),
+		'1002' => array('name' => '银行存款','direction'=>'0','type'=>'0','level'=>'1'),
+		'1002001' => array('name' => '中国银行','direction'=>'0','type'=>'0','level'=>'2'),
+		'1002001001' => array('name' => '客户直付','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002001002' => array('name' => '在途来款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002001003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002001004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002002' => array('name' => '招商银行','direction'=>'0','type'=>'0','level'=>'2'),
+		'1002002001' => array('name' => '客户直付','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002002002' => array('name' => '在途来款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002002003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002002004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002003' => array('name' => '浦发银行','direction'=>'0','type'=>'0','level'=>'2'),
+		'1002003001' => array('name' => '客户直付','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002003002' => array('name' => '在途来款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002003003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002003004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002004' => array('name' => '上海银行','direction'=>'0','type'=>'0','level'=>'2'),
+		'1002004001' => array('name' => '客户直付','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002004002' => array('name' => '在途来款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002004003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1002004004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003' => array('name' => '在途资金','direction'=>'0','type'=>'0','level'=>'1'),
+		'1003001' => array('name' => '快钱','direction'=>'0','type'=>'0','level'=>'2'),
+		'1003001001' => array('name' => '客户付款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003001003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003001004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003002' => array('name' => '财付通','direction'=>'0','type'=>'0','level'=>'2'),
+		'1003002001' => array('name' => '客户付款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003002003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003002004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003003' => array('name' => '支付宝','direction'=>'0','type'=>'0','level'=>'2'),
+		'1003003001' => array('name' => '客户付款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003003003' => array('name' => '打款退回','direction'=>'0','type'=>'0','level'=>'3'),
+		'1003003004' => array('name' => '支出款','direction'=>'0','type'=>'0','level'=>'3'),
+		'1221' => array('name' => '其他应收款','direction'=>'0','type'=>'0','level'=>'1'),
+		'1221009' => array('name' => '项目押金','direction'=>'0','type'=>'0','level'=>'2'),
+		'1123' => array('name' => '预付账款','direction'=>'0','type'=>'0','level'=>'1'),
+		'1123005' => array('name' => '项目预付款','direction'=>'0','type'=>'0','level'=>'2'),
+		'1321' => array('name' => '代理业务资产','direction'=>'0','type'=>'0','level'=>'1'),
+		'1321001' => array('name' => '定量包销','direction'=>'0','type'=>'0','level'=>'2'),
+		'2202' => array('name' => '应付账款','direction'=>'1','type'=>'1','level'=>'1'),
+		'2202001' => array('name' => '网上收银','direction'=>'1','type'=>'1','level'=>'2'),
+		'2202002' => array('name' => '24券账户','direction'=>'1','type'=>'1','level'=>'2'),
+		'2202002001' => array('name' => '账户A','direction'=>'1','type'=>'1','level'=>'3'),
+		'2202002002' => array('name' => '账户B','direction'=>'1','type'=>'1','level'=>'3'),
+		'2202002003' => array('name' => '账户C','direction'=>'1','type'=>'1','level'=>'3'),
+		'2202003' => array('name' => '应退客户未消费款','direction'=>'1','type'=>'1','level'=>'2'),
+		'2221' => array('name' => '应交税费','direction'=>'1','type'=>'1','level'=>'1'),
+		'2221001' => array('name' => '应交营业税','direction'=>'1','type'=>'1','level'=>'2'),
+		'2221002' => array('name' => '应交城建税','direction'=>'1','type'=>'1','level'=>'2'),
+		'2221003' => array('name' => '应交教育附加','direction'=>'1','type'=>'1','level'=>'2'),
+		'2401' => array('name' => '代收代付','direction'=>'1','type'=>'1','level'=>'1'),
+		'2401001' => array('name' => '商家销售额','direction'=>'1','type'=>'1','level'=>'2'),
+		'2401002' => array('name' => '应结商家总款','direction'=>'1','type'=>'1','level'=>'2'),
+		'6001' => array('name' => '主营业务收入','direction'=>'2','type'=>'1','level'=>'1'),
+		'6001001' => array('name' => '项目服务收入','direction'=>'2','type'=>'1','level'=>'2'),
+		'6601' => array('name' => '销售费用','direction'=>'2','type'=>'0','level'=>'1'),
+		'6601020' => array('name' => '24券返利','direction'=>'2','type'=>'0','level'=>'2'),
+		'6601020001' => array('name' => '注册返利','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020002' => array('name' => '邀请返利','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020003' => array('name' => '购买返利','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020004' => array('name' => '员工福利','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020005' => array('name' => '礼品卡','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020006' => array('name' => '礼券','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601020007' => array('name' => '客服赔款','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601015' => array('name' => '营销快递费','direction'=>'2','type'=>'0','level'=>'2'),
+		'6601022' => array('name' => '营销推广费','direction'=>'2','type'=>'0','level'=>'2'),
+		'6601022001' => array('name' => '亏损单','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601022002' => array('name' => '返利（指回扣）','direction'=>'2','type'=>'0','level'=>'3'),
+		'6601022003' => array('name' => '满就减','direction'=>'2','type'=>'0','level'=>'3'),
+		'6403' => array('name' => '营业税金及附加','direction'=>'2','type'=>'0','level'=>'1'),
+		'6603' => array('name' => '财务费用','direction'=>'2','type'=>'0','level'=>'1'),
+		'6603001' => array('name' => '手续费','direction'=>'2','type'=>'0','level'=>'2'),
+		'6603001001' => array('name' => '汇款手续费','direction'=>'2','type'=>'0','level'=>'3'),
+		'6603001002' => array('name' => '支付宝收款手续费','direction'=>'2','type'=>'0','level'=>'3'),
+		'6603001003' => array('name' => '快钱收收款手续费','direction'=>'2','type'=>'0','level'=>'3'),
+		'6603001004' => array('name' => '财富通收款手续费','direction'=>'2','type'=>'0','level'=>'3'),
+	);
+	
+	public static function getSubjects($subjectKey, $key = NULL){
+		$subject = self::$_subjects[$subjectKey]; 
+		if($key !== NULL){
+			if(!array_key_exists($key,$subject)){
+				return '';
+			}
+			return $subject[$key];
+		}else
+			return $subject; 
+	}
+}

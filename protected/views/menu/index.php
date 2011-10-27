@@ -1,12 +1,12 @@
 <?php $basepath = Yii::app()->request->baseUrl;?>
-<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/zTreeStyle.css" media="screen, projection" />
-<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/impromptu.css" media="screen, projection" />
-<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.core-3.0.min.js"></script>
-<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.excheck-3.0.min.js"></script>
-<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.ztree.exedit-3.0.min.js"></script>
-<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery-impromptu.3.2.js"></script>
-<script type="text/javascript" src="<?php echo $basepath ?>/js/my/menu.js"></script>
-<script type="text/javascript" src="<?php echo $basepath ?>/js/my/popup.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/menu/zTreeStyle.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/menu/impromptu.css" media="screen, projection" />
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/jquery.ztree.core-3.0.min.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/jquery.ztree.excheck-3.0.min.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/jquery.ztree.exedit-3.0.min.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/jquery-impromptu.3.2.min.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/menu.js"></script>
+<script type="text/javascript" src="<?php echo $basepath ?>/js/menu/popup.js"></script>
 
 <h1>分类管理</h1>
 

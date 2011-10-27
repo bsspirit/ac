@@ -43,13 +43,28 @@ $('.search-form form').submit(function(){
 			'header'=>'分类 ',
 			'value'=>'empty($data->catalog->name)?"未分类":$data->catalog->name',
 		),
-		'title',
+		array(
+			'header'=>'产品标题',
+			'value'=>'empty($data->title)?"":QHtml::utf8Substr($data->title,0,16)."..."',
+		),
 		array(
 			'header'=>'图片',
 			'value'=>'$data->image_url'
 		),
-		array(
+ 		array(
 			'class'=>'CButtonColumn',
-		),
+			'header'=>'操作',
+			'buttons'=>array(
+			 	'view'=>array(
+		           	'label'=>'详细',	
+        		   	'url'=>'Yii::app()->controller->createUrl("prod/detail",array("pid"=>$data->id))',
+		      		'options'=>array('target'=>'_blank'),
+	            )
+             ),
+        	'template'=>'{view} {update} {delete}',
+            'htmlOptions'=>array(
+		        'style'=>'width:60px;'
+		    ),
+		)
 	),
 )); ?>

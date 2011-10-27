@@ -19,7 +19,7 @@ class AdminController extends Controller
 //				'users'=>array('*'),
 //			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('index','create','update','admin','delete'),//'view'
 				'users'=>array('@'),
 			),
 //			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -47,14 +47,15 @@ class AdminController extends Controller
 	{
 		$model=new Prod;
 
-		// Uncomment the following line if AJAX validation is needed
 //		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Prod']))
 		{
 			$model->attributes=$_POST['Prod'];
+			$model->content=$_POST['content'];
+			$model->description=$_POST['description'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -78,7 +79,7 @@ class AdminController extends Controller
 		{
 			$model->attributes=$_POST['Prod'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

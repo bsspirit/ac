@@ -14,6 +14,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'application.widgets.*',
+		'application.util.*',
 	),
 	'defaultController' => 'default',
 	'modules'=>array(

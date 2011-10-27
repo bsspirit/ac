@@ -177,7 +177,7 @@ class AdminController extends Controller
 		
 		$folder = '/upfiles/image/';
 		$id = $_REQUEST['pid'];
-		
+		$model = $this->loadModel($id);
 		
 		if (isset($_POST['UploadForm'])) {
 	        if ($form->validate()) {
@@ -186,7 +186,6 @@ class AdminController extends Controller
 	            $file= dirname(Yii::app()->request->scriptFile) . DIRECTORY_SEPARATOR . $name;
 	            $form->image->saveAs($file);
 	            
-	            $model = $this->loadModel($id);
 	            $model->image_url=$name;
 	            $model->save(false);
 	        }

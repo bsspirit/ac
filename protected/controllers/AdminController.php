@@ -7,7 +7,7 @@ class AdminController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			'accessControl',
 		);
 	}
 
@@ -52,10 +52,15 @@ class AdminController extends Controller
 		if(isset($_POST['Prod']))
 		{
 			$model->attributes=$_POST['Prod'];
-			$model->content=$_POST['content'];
-			$model->description=$_POST['description'];
-			if($model->save())
+			if(isset($_POST['content'])){
+				$model->content=$_POST['content'];
+			}
+			if(isset($_POST['description'])){
+				$model->description=$_POST['description'];
+			}
+			if($model->save()){
 				$this->redirect(array('admin'));
+			}
 		}
 
 		$this->render('create',array(
@@ -78,8 +83,15 @@ class AdminController extends Controller
 		if(isset($_POST['Prod']))
 		{
 			$model->attributes=$_POST['Prod'];
-			if($model->save())
+			if(isset($_POST['content'])){
+				$model->content=$_POST['content'];
+			}
+			if(isset($_POST['description'])){
+				$model->description=$_POST['description'];
+			}
+			if($model->save()){
 				$this->redirect(array('admin'));
+			}
 		}
 
 		$this->render('update',array(
@@ -165,7 +177,7 @@ class AdminController extends Controller
 		
 		$folder = '/upfiles/image/';
 		$id = $_REQUEST['pid'];
-		$model = $this->loadModel($id);
+		
 		
 		if (isset($_POST['UploadForm'])) {
 	        if ($form->validate()) {
@@ -174,8 +186,9 @@ class AdminController extends Controller
 	            $file= dirname(Yii::app()->request->scriptFile) . DIRECTORY_SEPARATOR . $name;
 	            $form->image->saveAs($file);
 	            
+	            $model = $this->loadModel($id);
 	            $model->image_url=$name;
-	            $model->save();
+	            $model->save(false);
 	        }
 	    }
 		

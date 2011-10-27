@@ -83,7 +83,7 @@ class ProdController extends Controller
 				'select'=>'id, catid, title, content, image_url, description, create_date',
 				'condition'=>' catid = :catid',
 				'params'=>array(':catid'=>$catid),
-				'order'=>'create_date desc',
+				'order'=>'id desc',
 			),
 			'pagination'=>array(
 			    'pageSize'=>$page,

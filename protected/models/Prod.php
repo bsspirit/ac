@@ -69,6 +69,7 @@ class Prod extends CActiveRecord
 		$criteria->compare('image_url',$this->image_url,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('create_date',$this->create_date,true);
+		$criteria->order = 'id desc';
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

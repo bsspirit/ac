@@ -1,4 +1,8 @@
 <?php
+function html($img){
+	return '<img height="100px" alt="" src="'.Yii::app()->request->baseUrl.$img.'"/>';
+}
+
 $this->breadcrumbs=array(
 	'后台管理控制台'=>array('admin/index'),
 	'产品管理',
@@ -39,6 +43,11 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		array(
+			'header'=>'图片',
+			'type'=>'HTML',
+			'value'=>'html($data->image_url)',
+		),
+		array(
 			'name'=>'catid',
 			'header'=>'分类 ',
 			'value'=>'empty($data->catalog->name)?"未分类":$data->catalog->name',
@@ -46,10 +55,6 @@ $('.search-form form').submit(function(){
 		array(
 			'header'=>'产品标题',
 			'value'=>'empty($data->title)?"":QHtml::utf8Substr($data->title,0,30)',
-		),
-		array(
-			'header'=>'图片',
-			'value'=>'empty($data->image_url)?"":"已上传"'
 		),
  		array(
 			'class'=>'CButtonColumn',
@@ -65,7 +70,7 @@ $('.search-form form').submit(function(){
         		   	'url'=>'Yii::app()->controller->createUrl("/admin/image",array("pid"=>$data->id))',
 	            	'imageUrl'=>Yii::app()->request->baseUrl.'/css/image_btn.png',
 		      		'options'=>array('target'=>'_blank'),
-	            )
+	            ),
              ),
         	'template'=>'{view} {update} {delete} {pic}',
             'htmlOptions'=>array(

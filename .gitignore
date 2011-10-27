@@ -6,3 +6,4 @@ assets/*
 **/*.log
 **/**/*.log
 **/**/**/*.log
+protected/runtime/*

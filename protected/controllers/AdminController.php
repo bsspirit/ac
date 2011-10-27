@@ -183,7 +183,7 @@ class AdminController extends Controller
 	        if ($form->validate()) {
 	            $form->image = CUploadedFile::getInstance($form, 'image');
 	            $name = $folder . $id . substr($form->image->name,strripos($form->image->name,'.'));
-	            $file= dirname(Yii::app()->request->scriptFile) . DIRECTORY_SEPARATOR . $name;
+	            $file= dirname(Yii::app()->request->scriptFile) . $name;
 	            $form->image->saveAs($file);
 	            
 	            $model->image_url=$name;

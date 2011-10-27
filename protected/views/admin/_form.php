@@ -1,11 +1,13 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/menulist.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/kindeditor-min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin/zh_CN.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/kindeditor-min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/editor/zh_CN.js"></script>
 <script type="text/javascript">
 var editor_content;
 var editor_desc;
 KindEditor.ready(function(K) {
 	editor_content = K.create('textarea[name="content"]', {
+		uploadJson : 'upload',
+		fileManagerJson : 'manager',
 		allowFileManager : true
 	});
 
@@ -16,7 +18,7 @@ KindEditor.ready(function(K) {
 		items : [
 			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
 			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-			'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			'insertunorderedlist', 'link']
 	});
 });
 
@@ -38,12 +40,6 @@ KindEditor.ready(function(K) {
 		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>32)); ?>
 		<?php echo $form->error($model,'title'); ?>
-	</div>
-	
-	<div class="row">
-		标题图片<br/>
-		<?php echo $form->textField($model,'image_url',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'image_url'); ?>
 	</div>
 
 	<div class="row">

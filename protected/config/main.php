@@ -15,6 +15,7 @@ return array(
 		'application.components.*',
 		'application.widgets.*',
 		'application.util.*',
+		'application.util.editor.*',
 	),
 	'defaultController' => 'default',
 	'modules'=>array(

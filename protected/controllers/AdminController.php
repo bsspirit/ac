@@ -19,7 +19,7 @@ class AdminController extends Controller
 //				'users'=>array('*'),
 //			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','create','update','admin','delete'),//'view'
+				'actions'=>array('index','create','update','admin','delete','image'),//'view'
 				'users'=>array('@'),
 			),
 //			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -146,10 +146,6 @@ class AdminController extends Controller
 		return $model;
 	}
 
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='prod-form')
@@ -157,5 +153,38 @@ class AdminController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	/*
+	 * 上传文件
+	 */
+	public function actionImage()
+	{
+		$form = new UploadForm;
+		
+		$folder = 'upfiles/image/';
+		$id = $_REQUEST['pid'];
+		$model = $this->loadModel($id);
+		
+		if (isset($_POST['UploadForm'])) {
+	        if ($form->validate()) {
+	            $form->image = CUploadedFile::getInstance($form, 'image');
+	            $name = $folder . $id . substr($form->image->name,strripos($form->image->name,'.'));
+	            $file= dirname(Yii::app()->request->scriptFile) . DIRECTORY_SEPARATOR . $name;
+	            $form->image->saveAs($file);
+	            
+	            $model->image_url=$name;
+	            $model->save();
+	        }
+	    }
+		
+		$this->render('image',array(
+			'model'=>$model,
+			'form'=>$form,
+		));
+	}
+	
+	public function actionManager(){
+		
 	}
 }

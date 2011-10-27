@@ -45,11 +45,11 @@ $('.search-form form').submit(function(){
 		),
 		array(
 			'header'=>'产品标题',
-			'value'=>'empty($data->title)?"":QHtml::utf8Substr($data->title,0,16)."..."',
+			'value'=>'empty($data->title)?"":QHtml::utf8Substr($data->title,0,30)',
 		),
 		array(
 			'header'=>'图片',
-			'value'=>'$data->image_url'
+			'value'=>'empty($data->image_url)?"":"已上传"'
 		),
  		array(
 			'class'=>'CButtonColumn',
@@ -57,13 +57,19 @@ $('.search-form form').submit(function(){
 			'buttons'=>array(
 			 	'view'=>array(
 		           	'label'=>'详细',	
-        		   	'url'=>'Yii::app()->controller->createUrl("prod/detail",array("pid"=>$data->id))',
+        		   	'url'=>'Yii::app()->controller->createUrl("/prod/detail",array("pid"=>$data->id))',
+		      		'options'=>array('target'=>'_blank'),
+	            ),
+	            'pic'=>array(
+		           	'label'=>'图片上传',	
+        		   	'url'=>'Yii::app()->controller->createUrl("/admin/image",array("pid"=>$data->id))',
+	            	'imageUrl'=>Yii::app()->request->baseUrl.'/css/image_btn.png',
 		      		'options'=>array('target'=>'_blank'),
 	            )
              ),
-        	'template'=>'{view} {update} {delete}',
+        	'template'=>'{view} {update} {delete} {pic}',
             'htmlOptions'=>array(
-		        'style'=>'width:60px;'
+		        'style'=>'width:80px;'
 		    ),
 		)
 	),

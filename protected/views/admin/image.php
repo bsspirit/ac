@@ -6,6 +6,7 @@ $this->breadcrumbs=array(
 ?>
 
 <h1>上传标题图片</h1>
+<span style="font-size:0.8em;margin-top:10px">建议上传400px * 400px的图片</span>
 
 <div class="row">
 	<?php echo CHtml::form('', 'post', array('enctype'=>'multipart/form-data')); ?>

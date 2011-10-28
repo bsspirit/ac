@@ -201,6 +201,7 @@ div.search-form {
 .h150{height:150px;}
 .pic_ul{list-style-type:none;padding:0;margin:0;}
 .pic_ul li{margin:10px 5px;padding:0;display: inline;}
+.indent{text-indent:2em;}
 
 #sideleft{width:220px;float:left;}
 #middle{width:500px;float:left;margin:0 8px;}
@@ -221,7 +222,7 @@ div.search-form {
 
 .mybox{background:url("bg.png") repeat scroll 0 0 #FFFFFF;border:solid 1px #dfdfdf;text-align:left;margin-bottom:20px;}
 .mybox .title{margin:10px 5px;padding-left:30px;background-image:url("box_logo.jpg");line-height:30px;}
-.mybox .title .name{font-size: 14px;}
+.mybox .title .name{font-size: 14px;margin-left:4px;}
 .mybox .content{line-height:20px;margin:8px 5px 5px;padding:5px;}
 .mybox .font-letter{letter-spacing:3px;}
 .mybox p{margin:10px 5px;}
@@ -239,6 +240,7 @@ ol#controls li{	margin:0 10px 0 0;padding:0;float:left;list-style:none;line-heig
 ol#controls li a{float:left;height:20px;line-height:20px;border:1px solid #ccc;background:#DAF3F8;color:#555;padding:0 10px;text-decoration:none;}
 ol#controls li.current a{background:#5DC9E1;color:#fff;}
 ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+
 
 .myview{border:solid 1px #DFDFDF;text-align:left;margin:10px 5px;padding:3px;}
 .tree{border:solid 1px #DFDFDF;width:20%;}

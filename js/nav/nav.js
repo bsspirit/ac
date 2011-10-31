@@ -6,7 +6,7 @@ $(document).ready(function(){
 			eval('var obj =' + val);
 			if(obj.pId==0){
 				switch(obj.id){
-				case 7:	nav1[0]='<li id="nav_'+obj.id+'"><a href="'+path+obj.path+'">'+obj.name+'</a><ul class="subnav">';break;
+				case 7:	nav1[0]='<li><a href="'+path+obj.path+'">'+obj.name+'</a><ul class="subnav">';break;
 				case 8:	nav1[1]='<li><a href="'+path+obj.path+'">'+obj.name+'</a><ul class="subnav">';break;
 				case 1:	nav1[2]='<li><a href="'+path+obj.path+'">'+obj.name+'</a><ul class="subnav">';break;
 				case 2:	nav1[3]='<li><a href="'+path+obj.path+'">'+obj.name+'</a><ul class="subnav">';break;

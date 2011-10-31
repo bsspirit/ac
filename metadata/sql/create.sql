@@ -12,7 +12,8 @@ CREATE TABLE t_ac_prod(
 
 CREATE TABLE t_ac_catalog(
 	id int primary key auto_increment,
-	name varchar(32) not null unique
+	name varchar(32) not null unique,
+	path varchar(32) null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_ac_catalog_rel(

@@ -14,8 +14,11 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/form.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/js/nav/latest.css" />
 	
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/jquery-latest.js"></script>
+	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -41,40 +44,22 @@
 <div class="container">
 	<div id="header2">
 		<div class="banner"></div>
-		<div class="nav">
-			<table width="968" height="51" cellspacing="0" cellpadding="0" border="0" align="center">
-				<tr>
-					<td width="19"><img width="22" height="54" src="<?php echo Yii::app()->request->baseUrl; ?>/images/nav1.jpg"/></td>
-					<td background="<?php echo Yii::app()->request->baseUrl; ?>/images/nav2.jpg">
-						<table width="100%" cellspacing="0" cellpadding="0" border="0">
-							<tr>
-						        <td align="center"><?php echo CHtml::link('首  页', array('default/index'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('公司简介', array('site/about'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('产品介绍', array('prod/intro'))?></td>
-						        <td align="center">|</td>
-								<td align="center"><?php echo CHtml::link('节能环保', array('prod/saving'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('施工安装', array('prod/setup'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('维修保养', array('prod/maintain'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('工程案例', array('prod/case'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('行业新闻', array('prod/news'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('招聘信息', array('site/job'))?></td>
-						        <td align="center">|</td>
-						        <td align="center"><?php echo CHtml::link('联系我们', array('site/contact'))?></td>
-							</tr>
-						</table>
-					</td>
-					<td width="19"><img width="24" height="54" src="<?php echo Yii::app()->request->baseUrl; ?>/images/nav3.jpg"/></td>
-				</tr>
-			</table>
+		<div id="nav">
+			<ul class="topnav">
+				<li><a href="">首 页</a></li>
+				<li><a href="">公司简介</a></li>
+				<li><a href="">产品介绍</a></li>
+				<li><a href="">节能环保</a></li>
+				<li><a href="">施工安装</a></li>
+				<li><a href="">保养维修</a></li>
+				<li><a href="">工程案例</a></li>
+				<li><a href="">行业新闻</a></li>
+				<li><a href="">招聘信息</a></li>
+				<li><a href="">联系我们</a></li>
+			</ul>
 		</div>
 	</div>
+	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/nav.js"></script>
 	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -86,14 +71,14 @@
 
 	<div id="footer">
 		<div class="nav">
-			<?php echo CHtml::link('公司简介', array('site/about'))?>|
-			<?php echo CHtml::link('产品介绍', array('prod/intro'))?>|
-			<?php echo CHtml::link('北京开利空调施工安装', array('prod/setup'))?>|
-			<?php echo CHtml::link('北京开利空调保养维修', array('prod/maintain'))?>|
-			<?php echo CHtml::link('北京开利空调工程案例', array('prod/case'))?>|
-			<?php echo CHtml::link('北京开利空调行业新闻', array('prod/news'))?>|
-			<?php echo CHtml::link('招聘信息', array('site/job'))?>|
-			<?php echo CHtml::link('联系我们', array('site/contact'))?>
+			<?php echo CHtml::link('公司简介', array('/site/about'))?>|
+			<?php echo CHtml::link('产品介绍', array('/prod/intro'))?>|
+			<?php echo CHtml::link('北京开利空调施工安装', array('/prod/setup'))?>|
+			<?php echo CHtml::link('北京开利空调保养维修', array('/prod/maintain'))?>|
+			<?php echo CHtml::link('北京开利空调工程案例', array('/prod/case'))?>|
+			<?php echo CHtml::link('北京开利空调行业新闻', array('/prod/news'))?>|
+			<?php echo CHtml::link('招聘信息', array('/site/job'))?>|
+			<?php echo CHtml::link('联系我们', array('/site/contact'))?>
 			<?php 
 				echo '|';
 				if(Yii::app()->user->isGuest){
@@ -114,7 +99,6 @@
 		</div>
 	</div>
 
-</div><!-- page -->
-
+</div>
 </body>
 </html>

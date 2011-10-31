@@ -13,7 +13,11 @@ class MenuController extends Controller{
 	public function accessRules(){
 		return array(
 			array('allow',
-				'actions'=>array('index','menuTree','menuList','upname','move'),
+				'actions'=>array('menuTree','menuList','menuNav'),
+				'users'=>array('*'),
+			),
+			array('allow',
+				'actions'=>array('index','upname','move'),
 				'users'=>array('@'),
 			),
 			array('deny',
@@ -80,6 +84,22 @@ class MenuController extends Controller{
 			if(!empty($cid) && $cid == $cat->id){
 				$line .= ',selected:true';
 			}
+			$line .= '}';
+			array_push($json, $line);
+		}
+		echo CJSON::encode($json);
+		Yii::app()->end(); 
+	}
+	
+/*
+	 * 下拉列表JSON
+	 */
+	public function actionMenuNav($cid=null){
+		$rels=CatalogRel::model()->findAll();
+		$json = array();
+		foreach ($rels as $rel){
+			$line = '{';
+			$line .='id:'.$rel->sid.',pId:'.$rel->pid.',name:"'.$rel->son->name.'"'.',path:"'.$rel->son->path.'"';
 			$line .= '}';
 			array_push($json, $line);
 		}

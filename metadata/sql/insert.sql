@@ -1,16 +1,16 @@
 use aocheng;
 
 #一级分类
-insert into t_ac_catalog(id,name) values(1,"产品介绍");
-insert into t_ac_catalog(id,name) values(2,"节能环保");
-insert into t_ac_catalog(id,name) values(3,"施工安装");
-insert into t_ac_catalog(id,name) values(4,"保养维修");
-insert into t_ac_catalog(id,name) values(5,"工程案例");
-insert into t_ac_catalog(id,name) values(6,"行业新闻");
-insert into t_ac_catalog(id,name) values(7,"首 页");
-insert into t_ac_catalog(id,name) values(8,"公司简介");
-insert into t_ac_catalog(id,name) values(9,"招聘信息");
-insert into t_ac_catalog(id,name) values(10,"联系我们");
+insert into t_ac_catalog(id,name,path) values(1,"产品介绍","/prod/intro");
+insert into t_ac_catalog(id,name,path) values(2,"节能环保","/prod/saving");
+insert into t_ac_catalog(id,name,path) values(3,"施工安装","/prod/setup");
+insert into t_ac_catalog(id,name,path) values(4,"保养维修","/prod/maintain");
+insert into t_ac_catalog(id,name,path) values(5,"工程案例","/prod/case");
+insert into t_ac_catalog(id,name,path) values(6,"行业新闻","/prod/news");
+insert into t_ac_catalog(id,name,path) values(7,"首 页","/default/index");
+insert into t_ac_catalog(id,name,path) values(8,"公司简介","/site/about");
+insert into t_ac_catalog(id,name,path) values(9,"招聘信息","/site/job");
+insert into t_ac_catalog(id,name,path) values(10,"联系我们","/site/contact");
 
 #二级分类
 insert into t_ac_catalog(id,name) values(11,"主机设备 ");

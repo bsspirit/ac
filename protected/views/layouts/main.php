@@ -34,9 +34,11 @@
 			[<a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ac-999.com');">设为首页</a>] 
 			[<a href="#" onclick="window.external.AddFavorite(location.href,document.title);">加入收藏</a>]
 			<?php 
-			if(!Yii::app()->user->isGuest){
-				echo '['.CHtml::link('管理员界面', array('/admin')).']';
-			}
+				if(Yii::app()->user->isGuest){
+					echo '['.CHtml::link('登陆', array('/site/login')).']';
+				} else {
+					echo '['.CHtml::link('管理员', array('/admin')).'|'.CHtml::link('退出', array('/site/logout')).']';
+				}
 			?>
 		</div>
 	</div>

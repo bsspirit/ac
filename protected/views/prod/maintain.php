@@ -4,13 +4,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	'menu'=>array('cid'=>4),
 	'contact'=>array(), 
 	'intro'=>array(),
 	'friend'=>array(),
 );
 ?>
 
-<h1>保养维修</h1>
+<h1><?php echo $title?></h1>
 
 <?php $this->widget('application.widgets.picWidget',array(
 	'dataProvider'=>$dataProvider,

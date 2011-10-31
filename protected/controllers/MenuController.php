@@ -13,7 +13,7 @@ class MenuController extends Controller{
 	public function accessRules(){
 		return array(
 			array('allow',
-				'actions'=>array('menuTree','menuList','menuNav'),
+				'actions'=>array('menuTree','menuList','menuNav','menuChildren'),
 				'users'=>array('*'),
 			),
 			array('allow',
@@ -100,6 +100,33 @@ class MenuController extends Controller{
 		foreach ($rels as $rel){
 			$line = '{';
 			$line .='id:'.$rel->sid.',pId:'.$rel->pid.',name:"'.$rel->son->name.'"'.',path:"'.$rel->son->path.'"';
+			$line .= '}';
+			array_push($json, $line);
+		}
+		echo CJSON::encode($json);
+		Yii::app()->end(); 
+	}
+	
+	/*
+	 * //SELECT r.pid,r.sid,c.name,c.path FROM t_ac_catalog_rel r, t_ac_catalog c
+	 *	//WHERE pid=4 AND r.sid=c.id
+	 * //UNION 
+	 * //SELECT r3.pid,r3.sid,c3.name,c3.path FROM t_ac_catalog_rel r3, t_ac_catalog c3
+	 * //WHERE r3.pid IN (SELECT sid FROM t_ac_catalog_rel r2 WHERE r2.pid=4) AND r3.sid=c3.id
+	 */
+	public function actionMenuChildren($cid=null){
+		$sql = " SELECT r.pid,r.sid,c.name,c.path FROM t_ac_catalog_rel r, t_ac_catalog c WHERE pid=".$cid." AND r.sid=c.id";
+		$sql .= " UNION"; 
+		$sql .= " SELECT r3.pid,r3.sid,c3.name,c3.path FROM t_ac_catalog_rel r3, t_ac_catalog c3 WHERE r3.pid IN (SELECT sid FROM t_ac_catalog_rel r2 WHERE r2.pid=".$cid.") AND r3.sid=c3.id";
+		
+		$conn=Yii::app()->db;
+		$command = $conn->createCommand($sql);
+		$rows=$command->queryAll();
+		
+		$json = array();
+		foreach ($rows as $row){
+			$line = '{';
+			$line .='id:'.$row['sid'].',pId:'.$row['pid'].',name:"'.$row['name'].'"'.',path:"'.$row['path'].'"';
 			$line .= '}';
 			array_push($json, $line);
 		}

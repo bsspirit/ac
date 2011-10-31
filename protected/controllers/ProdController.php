@@ -7,61 +7,67 @@ class ProdController extends Controller
 	/*
 	 * 产品介绍,1
 	 */
-	public function actionIntro()
+	public function actionIntro($cid=1)
 	{
-		$dataProvider=$this->getProdsByCatId(1,20);
+		$dataProvider=$this->getProdsByCatId($cid,20);
 		$this->render('intro',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
 	 * 节能环保,2
 	 */
-	public function actionSaving()
+	public function actionSaving($cid=2)
 	{
-		$dataProvider=$this->getProdsByCatId(2,20);
+		$dataProvider=$this->getProdsByCatId($cid,20);
 		$this->render('saving',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
 	 * 施工安装,3
 	 */
-	public function actionSetup()
+	public function actionSetup($cid=3)
 	{
-		$dataProvider=$this->getProdsByCatId(3,2000);
+		$dataProvider=$this->getProdsByCatId($cid,2000);
 		$this->render('setup',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
 	 * 保养维修,4
 	 */
-	public function actionMaintain()
+	public function actionMaintain($cid=4)
 	{
-		$dataProvider=$this->getProdsByCatId(4,2000);
+		$dataProvider=$this->getProdsByCatId($cid,2000);
 		$this->render('maintain',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
 	 * 施工安装,5
 	 */
-	public function actionCase()
+	public function actionCase($cid=5)
 	{
-		$dataProvider=$this->getProdsByCatId(5,2000);
+		$dataProvider=$this->getProdsByCatId($cid,2000);
 		$this->render('case',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
 	 * 行业新闻,6
 	 */
-	public function actionNews()
+	public function actionNews($cid=6)
 	{
-		$dataProvider=$this->getProdsByCatId(6,40);
+		$dataProvider=$this->getProdsByCatId($cid,40);
 		$this->render('news',array(
 			'dataProvider'=>$dataProvider,
+			'title'=>$this->getCatalog($cid)->name,
 		));
 	}
 	/*
@@ -70,7 +76,7 @@ class ProdController extends Controller
 	public function actionDetail()
 	{
 		$this->render('detail',array(
-			'model'=>$this->loadModel($_GET['pid']),//$_GET['pid']),
+			'model'=>$this->loadModel($_GET['pid']),
 		));
 	}
 	
@@ -91,133 +97,14 @@ class ProdController extends Controller
 		));
 	}
 	
-//	/**
-//	 * Displays a particular model.
-//	 * @param integer $id the ID of the model to be displayed
-//	 */
-//	public function actionView($id)
-//	{
-//		$this->render('view',array(
-//			'model'=>$this->loadModel($id),
-//		));
-//	}
-//
-//	/**
-//	 * Creates a new model.
-//	 * If creation is successful, the browser will be redirected to the 'view' page.
-//	 */
-//	public function actionCreate()
-//	{
-//		$model=new Prod;
-//
-//		// Uncomment the following line if AJAX validation is needed
-////		$this->performAjaxValidation($model);
-//
-//		if(isset($_POST['Prod']))
-//		{
-//			$model->attributes=$_POST['Prod'];
-//			if($model->save())
-//				$this->redirect(array('view','id'=>$model->id));
-//		}
-//
-//		$this->render('create',array(
-//			'model'=>$model,
-//		));
-//	}
-//
-//	/**
-//	 * Updates a particular model.
-//	 * If update is successful, the browser will be redirected to the 'view' page.
-//	 * @param integer $id the ID of the model to be updated
-//	 */
-//	public function actionUpdate($id)
-//	{
-//		$model=$this->loadModel($id);
-//
-//		// Uncomment the following line if AJAX validation is needed
-//		// $this->performAjaxValidation($model);
-//
-//		if(isset($_POST['Prod']))
-//		{
-//			$model->attributes=$_POST['Prod'];
-//			if($model->save())
-//				$this->redirect(array('view','id'=>$model->id));
-//		}
-//
-//		$this->render('update',array(
-//			'model'=>$model,
-//		));
-//	}
-//
-//	/**
-//	 * Deletes a particular model.
-//	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-//	 * @param integer $id the ID of the model to be deleted
-//	 */
-//	public function actionDelete($id)
-//	{
-//		if(Yii::app()->request->isPostRequest)
-//		{
-//			// we only allow deletion via POST request
-//			$this->loadModel($id)->delete();
-//
-//			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-//			if(!isset($_GET['ajax']))
-//				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-//		}
-//		else
-//			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-//	}
-//
-//	/**
-//	 * Lists all models.
-//	 */
-//	public function actionIndex()
-//	{
-//		$dataProvider=new CActiveDataProvider('Prod');
-//		$this->render('index',array(
-//			'dataProvider'=>$dataProvider,
-//		));
-//	}
-//
-//	/**
-//	 * Manages all models.
-//	 */
-//	public function actionAdmin()
-//	{
-//		$model=new Prod('search');
-//		$model->unsetAttributes();  // clear any default values
-//		if(isset($_GET['Prod']))
-//			$model->attributes=$_GET['Prod'];
-//
-//		$this->render('admin',array(
-//			'model'=>$model,
-//		));
-//	}
-//
-//	/**
-//	 * Returns the data model based on the primary key given in the GET variable.
-//	 * If the data model is not found, an HTTP exception will be raised.
-//	 * @param integer the ID of the model to be loaded
-//	 */
-	public function loadModel($id)
-	{
+	public function loadModel($id){
 		$model=Prod::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-//
-//	/**
-//	 * Performs the AJAX validation.
-//	 * @param CModel the model to be validated
-//	 */
-//	protected function performAjaxValidation($model)
-//	{
-//		if(isset($_POST['ajax']) && $_POST['ajax']==='prod-form')
-//		{
-//			echo CActiveForm::validate($model);
-//			Yii::app()->end();
-//		}
-//	}
+	
+	private function getCatalog($id){
+		return Catalog::model()->findByPk($id);
+	}
 }

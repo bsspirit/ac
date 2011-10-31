@@ -4,6 +4,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	'menu'=>array('cid'=>5),
 	'contact'=>array(), 
 	'intro'=>array(),
 	'friend'=>array(),
@@ -11,7 +12,7 @@ $this->menu=array(
 
 ?>
 
-<h1>工程案例</h1>
+<h1><?php echo $title?></h1>
 
 <?php $this->widget('application.widgets.picWidget',array(
 	'dataProvider'=>$dataProvider,

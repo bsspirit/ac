@@ -13,32 +13,32 @@ insert into t_ac_catalog(id,name,path) values(9,"招聘信息","/site/job");
 insert into t_ac_catalog(id,name,path) values(10,"联系我们","/site/contact");
 
 #二级分类
-insert into t_ac_catalog(id,name) values(11,"主机设备 ");
-insert into t_ac_catalog(id,name) values(12,"末端设备");
-insert into t_ac_catalog(id,name) values(13,"周边设备");
-insert into t_ac_catalog(id,name) values(14,"零部件");
-insert into t_ac_catalog(id,name) values(15,"机房安装");
-insert into t_ac_catalog(id,name) values(16,"系统安装");
-insert into t_ac_catalog(id,name) values(17,"主机设备保养");
-insert into t_ac_catalog(id,name) values(18,"其他设备保养 ");
-insert into t_ac_catalog(id,name) values(19,"末端设备保养");
-insert into t_ac_catalog(id,name) values(20,"文化设施项目");
-insert into t_ac_catalog(id,name) values(21,"生物医药设施");
-insert into t_ac_catalog(id,name) values(22,"工业设施");
-insert into t_ac_catalog(id,name) values(23,"公共设施 ");
-insert into t_ac_catalog(id,name) values(24,"体育场馆");
+insert into t_ac_catalog(id,name,path) values(11,"主机设备 ","/prod/intro/cid/11");
+insert into t_ac_catalog(id,name,path) values(12,"末端设备","/prod/intro/cid/12");
+insert into t_ac_catalog(id,name,path) values(13,"周边设备","/prod/intro/cid/13");
+insert into t_ac_catalog(id,name,path) values(14,"零部件","/prod/setup/cid/14");
+insert into t_ac_catalog(id,name,path) values(15,"机房安装","/prod/setup/cid/15");
+insert into t_ac_catalog(id,name,path) values(16,"系统安装","/prod/setup/cid/16");
+insert into t_ac_catalog(id,name,path) values(17,"主机设备保养","/prod/maintain/cid/17");
+insert into t_ac_catalog(id,name,path) values(18,"其他设备保养 ","/prod/maintain/cid/18");
+insert into t_ac_catalog(id,name,path) values(19,"末端设备保养","/prod/maintain/cid/19");
+insert into t_ac_catalog(id,name,path) values(20,"文化设施项目","/prod/case/cid/20");
+insert into t_ac_catalog(id,name,path) values(21,"生物医药设施","/prod/case/cid/21");
+insert into t_ac_catalog(id,name,path) values(22,"工业设施","/prod/case/cid/22");
+insert into t_ac_catalog(id,name,path) values(23,"公共设施 ","/prod/case/cid/23");
+insert into t_ac_catalog(id,name,path) values(24,"体育场馆","/prod/case/cid/24");
 
 #三级分类
-insert into t_ac_catalog(id,name) values(25,"离心机 ");
-insert into t_ac_catalog(id,name) values(26,"螺杆机");
-insert into t_ac_catalog(id,name) values(27,"活塞机");
-insert into t_ac_catalog(id,name) values(28,"溴化锂机组");
-insert into t_ac_catalog(id,name) values(29,"风冷机组");
-insert into t_ac_catalog(id,name) values(30,"水泵");
-insert into t_ac_catalog(id,name) values(31,"冷却塔");
-insert into t_ac_catalog(id,name) values(32,"冷冻油及溶液 ");
-insert into t_ac_catalog(id,name) values(33,"维修保养介绍");
-insert into t_ac_catalog(id,name) values(34,"其它");
+insert into t_ac_catalog(id,name,path) values(25,"离心机 ","/prod/maintain/cid/25");
+insert into t_ac_catalog(id,name,path) values(26,"螺杆机","/prod/maintain/cid/26");
+insert into t_ac_catalog(id,name,path) values(27,"活塞机","/prod/maintain/cid/27");
+insert into t_ac_catalog(id,name,path) values(28,"溴化锂机组","/prod/maintain/cid/28");
+insert into t_ac_catalog(id,name,path) values(29,"风冷机组","/prod/maintain/cid/29");
+insert into t_ac_catalog(id,name,path) values(30,"水泵","/prod/maintain/cid/30");
+insert into t_ac_catalog(id,name,path) values(31,"冷却塔","/prod/maintain/cid/31");
+insert into t_ac_catalog(id,name,path) values(32,"冷冻油及溶液 ","/prod/maintain/cid/32");
+insert into t_ac_catalog(id,name,path) values(33,"维修保养介绍","/prod/maintain/cid/33");
+insert into t_ac_catalog(id,name,path) values(34,"其它","/prod/maintain/cid/34");
 
 
 #上下级关系

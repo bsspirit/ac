@@ -4,13 +4,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	'menu'=>array('cid'=>1),
 	'contact'=>array(), 
 	'intro'=>array(),
 	'friend'=>array(),
 );
 ?>
 
-<h1>产品介绍</h1>
+<h1><?php echo $title?></h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

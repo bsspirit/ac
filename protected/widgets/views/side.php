@@ -30,6 +30,12 @@ foreach (array_keys($pages) as $page){
 			'prod'=>$pages[$page],
 		));
 	}
+	
+	if($page =='menu'){
+		$this->render('box/menu', array(
+			'menu'=>$pages[$page],
+		));
+	}
 }
 ?>
 

@@ -22,6 +22,7 @@ $this->menu=array(
 		<br/><p class="indent">Fax:010-67187019<br/>
 		<br/><p class="indent">联系人：杨小姐</p>
 		<br/><p class="indent">QQ：1139355159</p>
+		<p><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/map.png"/></p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 	 </div> 

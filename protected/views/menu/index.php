@@ -37,6 +37,10 @@ $this->breadcrumbs=array(
 			'value'=>'empty($data->son->name)?"未分类":$data->son->name',
 		),
 		array(
+			'header'=>'访问地址',
+			'value'=>'empty($data->son->path)?"":$data->son->path',
+		),
+		array(
 			'name'=>'son',
 			'header'=>'父结点 ',
 			'value'=>'$data->pid==0?"一级分类":(empty($data->parent->name)?"未分类":$data->parent->name)',

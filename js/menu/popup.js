@@ -2,9 +2,11 @@ function popup_name(obj){
 	var child1 = $(obj).parent().parent().children(':first-child').next();
 	var catid = child1.text();
 	var name = child1.next().text();
+	var rpath = child1.next().next().text();
 	
 	var txt = '<form id="form-name" method="get" action="'+path+'/menu/upname">'
-		txt+= '分类名称：<input type="text" name="name" value="'+name+'" />';
+		txt+= '分类名称：<input type="text" name="name" value="'+name+'" /><br/>';
+		txt+= '分类地址：<input type="text" name="path" value="'+rpath+'" /><br/>';
 		txt+= '<input type="hidden" name="catid" value="'+catid+'"/>'
 		txt+= '</form>';
 	

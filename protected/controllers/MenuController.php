@@ -30,6 +30,7 @@ class MenuController extends Controller{
 		if(isset($_GET['name'])){
 			$cat=Catalog::model()->findByPk($_GET['catid']);
 			$cat->name=$_GET['name'];
+			$cat->path=$_GET['path'];
 			$cat->save();
 		}
 		

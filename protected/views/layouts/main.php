@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/js/nav/latest.css" />
+	<link rel="shortcut icon" href="favicon.ico" />
 	
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/jquery.js"></script>
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/jquery-latest.js"></script>

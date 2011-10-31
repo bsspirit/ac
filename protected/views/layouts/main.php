@@ -45,7 +45,7 @@
 <div class="container">
 	<div id="header2">
 		<div class="banner"></div>
-		<div id="nav">
+		<div id="header-nav">
 			<ul class="topnav">
 				<li><a href="">首 页</a></li>
 				<li><a href="">公司简介</a></li>
@@ -71,24 +71,6 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		<div class="nav">
-			<?php echo CHtml::link('公司简介', array('/site/about'))?>|
-			<?php echo CHtml::link('产品介绍', array('/prod/intro'))?>|
-			<?php echo CHtml::link('北京开利空调施工安装', array('/prod/setup'))?>|
-			<?php echo CHtml::link('北京开利空调保养维修', array('/prod/maintain'))?>|
-			<?php echo CHtml::link('北京开利空调工程案例', array('/prod/case'))?>|
-			<?php echo CHtml::link('北京开利空调行业新闻', array('/prod/news'))?>|
-			<?php echo CHtml::link('招聘信息', array('/site/job'))?>|
-			<?php echo CHtml::link('联系我们', array('/site/contact'))?>
-			<?php 
-				echo '|';
-				if(Yii::app()->user->isGuest){
-					echo CHtml::link('管理员登陆', array('/site/login'));
-				} else {
-					echo CHtml::link('退出登陆', array('/site/logout'));
-				}
-			?>
-		</div>
 		<div class="footer-content">
 			<div class="logo">
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.png"/>

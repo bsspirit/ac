@@ -36,8 +36,7 @@ $(document).ready(function(){
 			txt += nav1[i] + '</ul></li>';
 		}
 		txt += '</ul>';
-		$('#nav').html(txt);
-
+		$('#header-nav').html(txt);
 		
 		$("ul.topnav li a").hover(function() { 
 			$(this).parent().find("ul.subnav").slideDown('fast').show(); 

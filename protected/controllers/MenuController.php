@@ -77,7 +77,14 @@ class MenuController extends Controller{
 	 * 下拉列表JSON
 	 */
 	public function actionMenuList($cid=null){
-		$cats=Catalog::model()->findAll();
+		$cats=Catalog::model()->findAll(
+			array('order'=>	" convert(name using gb2312) asc")
+		);
+		
+		foreach($cats as $cat){
+			$cat['name'] = substr(QPinYin::cn2pinyin(QPinYin::utf8Substr($cat['name'],0,1),1),0,1).'-'.$cat['name'];
+		}
+		
 		$json = array();
 		foreach ($cats as $cat){
 			$line = '{';
@@ -92,7 +99,7 @@ class MenuController extends Controller{
 		Yii::app()->end(); 
 	}
 	
-/*
+	/*
 	 * 下拉列表JSON
 	 */
 	public function actionMenuNav($cid=null){

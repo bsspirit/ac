@@ -2,6 +2,12 @@
 
 class QPinYin{
 	
+	public function utf8Substr($str, $from, $len){
+	    return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'.
+	                       '((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s',
+	                       '$1',$str);
+	}
+	
 	
 	public static function cn2pinyin($_String, $_Code='gb2312') {
 	    $_DataKey = "a|ai|an|ang|ao|ba|bai|ban|bang|bao|bei|ben|beng|bi|bian|biao|bie|bin|bing|bo|bu|ca|cai|can|cang|cao|ce|ceng|cha" .

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'后台管理控制台'=>array('admin/index'),
-	'上传标题图片',
+	'上传标题图片', 
 );
 ?>
 

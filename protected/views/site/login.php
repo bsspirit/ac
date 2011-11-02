@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle=Yii::app()->name . ' - 登陆';
 $this->breadcrumbs=array(
-	'用户登陆',
+	'用户登陆', 
 );
 ?>
 

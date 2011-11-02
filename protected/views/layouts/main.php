@@ -38,7 +38,7 @@
 					echo '['.CHtml::link('登陆', array('/site/login')).']';
 				} else {
 					echo '['.CHtml::link('管理员', array('/admin')).'|'.CHtml::link('退出', array('/site/logout')).']';
-				}
+				} 
 			?>
 		</div>
 	</div>
@@ -78,8 +78,14 @@
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.png"/>
 			</div>
 			<div class="copyright">
-			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备XXXXXX号<br/>
-				电话：010-67186799 67187099    Email：ac_carrier@sina.com<br/>
+			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备07057890号<br/>
+				电话：010-67186799&nbsp;&nbsp;67187099&nbsp;&nbsp;&nbsp;&nbsp;Email:ac_carrier@sina.com<br/>
+			</div>
+			<div class="link">
+				<script type="text/javascript">
+				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4e6b47b298cac1b0c8dd48673d00af0f' type='text/javascript'%3E%3C/script%3E"));
+				</script>
 			</div>
 		</div>
 	</div>

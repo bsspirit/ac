@@ -59,7 +59,7 @@ if (empty($_FILES) === false) {
 		alert("上传文件大小超过限制。");
 	}
 	//检查目录名
-	$dir_name = empty($_GET['dir']) ? 'image' : trim($_GET['dir']);
+	$dir_name = empty($_GET['dir']) ? 'image' : trim($_GET['dir']); 
 	if (empty($ext_arr[$dir_name])) {
 		alert("目录名不正确。");
 	}

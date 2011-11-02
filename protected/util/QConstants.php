@@ -10,7 +10,7 @@ class QConstants
 	const CONTRACT_UPDATE = '修改合同';  
 	const CONTRACT_RETURN = '审单不通过';
 	const CONTRACT_PASS = '审单通过';
-	const CONTRACT_DELETE = '删除合同';  
+	const CONTRACT_DELETE = '删除合同';
 	const CONTRACT_SIGNAGTURE = '签署合同'; 
 	const CONTRACT_APPROVALN = '驳回合同'; 
 	const CONTRACT_APPROVALY = '审批合同'; 

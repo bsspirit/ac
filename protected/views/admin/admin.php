@@ -4,7 +4,7 @@ function html($img){
 }
 
 $this->breadcrumbs=array(
-	'后台管理控制台'=>array('admin/index'),
+	'后台管理控制台'=>array('admin/index'), 
 	'产品管理',
 );
 

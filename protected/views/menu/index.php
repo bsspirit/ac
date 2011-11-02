@@ -10,7 +10,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'后台管理控制台'=>array('admin/index'),
+	'后台管理控制台'=>array('admin/index'), 
 	'分类管理',
 );
 ?>

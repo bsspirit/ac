@@ -15,7 +15,7 @@ class QCity
         			1517 => array(
 				'id' => 1517,
 				'name' => '瀍河回族区',
-				'area_code' => 0,
+				'area_code' => 0
 			),
         			1621 => array(
 				'id' => 1621,

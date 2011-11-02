@@ -265,7 +265,7 @@ class QControllerHelp
     public static function getTrade($trades)
     {
     	$trade = '';
-    	if(is_array($trades)) {
+    	if(is_array($trades)) { 
     		foreach($trades as $key=>$value) {
     			$trade .= $value->trade_name.'、';
     		}

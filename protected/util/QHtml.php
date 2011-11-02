@@ -3,7 +3,7 @@ class QHtml
 {
     public static function moneyit($k) 
     {
-        return rtrim(rtrim(sprintf('%.2f',$k), '0'), '.');
+        return rtrim(rtrim(sprintf('%.2f',$k), '0'), '.'); 
     }
     
     public static function city_optionsdb($city_id,$type=0)

@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	'后台管理控制台'=>array('admin/index'),
 	$model->title=>array('update','id'=>$model->id),
-	'更新',
+	'更新', 
 );
 
 $this->menu=array(

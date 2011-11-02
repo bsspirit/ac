@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 节能环保'; 
 $this->breadcrumbs=array(
 	'节能环保',
 );

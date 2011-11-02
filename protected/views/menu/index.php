@@ -1,4 +1,7 @@
-<?php $basepath = Yii::app()->request->baseUrl;?>
+<?php 
+$basepath = Yii::app()->request->baseUrl;
+$this->pageTitle=Yii::app()->name . ' - 分类管理'; 
+?>
 <link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/menu/zTreeStyle.css" media="screen, projection" />
 <link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/menu/impromptu.css" media="screen, projection" />
 <script type="text/javascript" src="<?php echo $basepath ?>/js/menu/jquery.ztree.core-3.0.min.js"></script>

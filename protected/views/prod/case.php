@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 工程案例'; 
 $this->breadcrumbs=array(
 	'工程案例',
 );

@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 保养维修'; 
 $this->breadcrumbs=array(
 	'保养维修',
 );

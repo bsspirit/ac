@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 产品介绍'; 
 $this->breadcrumbs=array(
 	'产品介绍',
 );

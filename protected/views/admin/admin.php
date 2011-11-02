@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 产品管理';
 function html($img){
 	return '<img height="100px" alt="" src="'.Yii::app()->request->baseUrl.$img.'"/>';
 }

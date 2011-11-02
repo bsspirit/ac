@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 行业新闻'; 
 $this->breadcrumbs=array(
 	'行业新闻',
 );

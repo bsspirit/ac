@@ -1,7 +1,7 @@
 <?php
-$this->pageTitle=Yii::app()->name . ' - Error';
+$this->pageTitle=Yii::app()->name . ' - 出错了';
 $this->breadcrumbs=array(
-	'Error',
+	'出错了',
 );
 ?>
 

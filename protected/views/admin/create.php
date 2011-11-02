@@ -1,4 +1,5 @@
 <?php
+$this->pageTitle=Yii::app()->name . ' - 增加产品';
 $this->breadcrumbs=array(
 	'后台管理控制台'=>array('admin/index'),
 	'增加产品', 

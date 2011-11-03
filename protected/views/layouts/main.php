@@ -62,7 +62,7 @@
 			</ul>
 		</div>
 	</div>
-	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/nav.js"></script>
+	<script type="text/javascript" src="<?php echo $basepath; ?>/js/nav/nav.js"></script>
 	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(

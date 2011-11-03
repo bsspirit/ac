@@ -2,7 +2,7 @@
 
 class ProdController extends Controller
 {
-	public $layout='//layouts/column3';
+	public $layout='//layouts/column4';
 
 	/*
 	 * 产品介绍,1

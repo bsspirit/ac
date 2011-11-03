@@ -2,7 +2,7 @@
 
 class SiteController extends Controller
 {
-	public $layout='//layouts/column3';
+	public $layout='//layouts/column4';
 	
 	/*
 	 * 公司介绍

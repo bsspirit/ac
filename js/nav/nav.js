@@ -32,7 +32,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-		for(var i in nav1){
+		for (i=0;i<10;i++)
 			txt += nav1[i] + '</ul></li>';
 		}
 		txt += '</ul>';

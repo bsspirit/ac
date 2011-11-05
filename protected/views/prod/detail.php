@@ -38,15 +38,19 @@ $this->menu=array(
 	'friend'=>array(),
 );
 ?>
-
-<div class="content">
-	<h2><?php echo $model->title?></h2>
-	发布日间：<?php echo $model->create_date?><br/><br/>
-	<?php if(!empty($model->image_url)){?>
-	<p><img width="400"border="0" src="<?php echo Yii::app()->request->baseUrl.$model->image_url ?>"/></p>
-	<?php }?>
-	<br/>
-	<p>
-		<?php echo $model->content?>
-	</p>
+<div class="mybox">
+	 <div class="title">
+	 	<strong class="name"><?php echo $model->title?></strong>
+	 </div>
+	 <div class="content">
+		发布日间：<?php echo $model->create_date?><br/><br/>
+		<?php if(!empty($model->image_url)){?>
+		<p><img width="400"border="0" src="<?php echo Yii::app()->request->baseUrl.$model->image_url ?>"/></p>
+		<?php }?>
+		<br/>
+		<p>
+			<?php echo $model->content?>
+		</p>
+	 </div> 
 </div>
+

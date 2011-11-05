@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	'contact'=>array(), 
-	'intro'=>array(),
 	'friend'=>array(),
 );
 ?>

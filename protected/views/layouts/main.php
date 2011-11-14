@@ -4,6 +4,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="zh_CN" />
+	<meta name="keywords" content="北京开利空调,北京开利配件,北京开利空调,北京carrier 空调"/>
+	<meta name="description" content="北京奥诚兴业科技有限公司致力于开利空调,开利配件的低价销售,开利空调安装,开利空调调试,开利空调维护保养.北京开利的总代理,提供carrier空调及其他品牌空调的相关服务."/>
+	<meta name="robots" content="follow,all" />
+	<meta  name="Copyright" content="北京开利空调,www.ac-999.com"/>
 
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo $basepath ?>/css/screen.css" media="screen, projection" />
@@ -21,6 +25,7 @@
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/jquery-latest.js"></script>
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
 </head>
 
 <body path="<?php echo $basepath?>">

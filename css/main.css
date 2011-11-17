@@ -227,7 +227,7 @@ div.search-form {
 .mybox .content{line-height:20px;margin:8px 5px 5px;padding:5px;}
 .mybox .font-letter{letter-spacing:3px;}
 .mybox p{margin:10px 5px;}
-.mybox li{line-height:22px;border-bottom: 1px dashed #DFDFDF;};
+.mybox li{line-height:22px;/*border-bottom: 1px dashed #DFDFDF;*/};
 
 #slider ul, #slider li,#slider2 ul, #slider2 li{margin:0;padding:0;list-style:none;}
 #slider2{margin-top:1em;}

@@ -9,7 +9,7 @@ class ProdController extends Controller
 	 */
 	public function actionIntro($cid=1)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,20);
+		$dataProvider=$this->getProdsByCatId($cid,10);
 		$this->render('intro',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -20,7 +20,7 @@ class ProdController extends Controller
 	 */
 	public function actionSaving($cid=2)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,20);
+		$dataProvider=$this->getProdsByCatId($cid,10);
 		$this->render('saving',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -31,7 +31,7 @@ class ProdController extends Controller
 	 */
 	public function actionSetup($cid=3)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,2000);
+		$dataProvider=$this->getProdsByCatId($cid,20);
 		$this->render('setup',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -42,7 +42,7 @@ class ProdController extends Controller
 	 */
 	public function actionMaintain($cid=4)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,2000);
+		$dataProvider=$this->getProdsByCatId($cid,20);
 		$this->render('maintain',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -53,7 +53,7 @@ class ProdController extends Controller
 	 */
 	public function actionCase($cid=5)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,2000);
+		$dataProvider=$this->getProdsByCatId($cid,20);
 		$this->render('case',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -64,7 +64,7 @@ class ProdController extends Controller
 	 */
 	public function actionNews($cid=6)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,40);
+		$dataProvider=$this->getProdsByCatId($cid,30);
 		$this->render('news',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,

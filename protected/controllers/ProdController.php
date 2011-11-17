@@ -9,7 +9,7 @@ class ProdController extends Controller
 	 */
 	public function actionIntro($cid=1)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,10);
+		$dataProvider=$this->getProdsByCatIdWithSub($cid,10);
 		$this->render('intro',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -20,7 +20,7 @@ class ProdController extends Controller
 	 */
 	public function actionSaving($cid=2)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,10);
+		$dataProvider=$this->getProdsByCatIdWithSub($cid,10);
 		$this->render('saving',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -31,7 +31,7 @@ class ProdController extends Controller
 	 */
 	public function actionSetup($cid=3)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,20);
+		$dataProvider=$this->getProdsByCatIdWithSub($cid,20);
 		$this->render('setup',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -42,7 +42,7 @@ class ProdController extends Controller
 	 */
 	public function actionMaintain($cid=4)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,20);
+		$dataProvider=$this->getProdsByCatIdWithSub($cid,20);
 		$this->render('maintain',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -53,7 +53,7 @@ class ProdController extends Controller
 	 */
 	public function actionCase($cid=5)
 	{
-		$dataProvider=$this->getProdsByCatId($cid,20);
+		$dataProvider=$this->getProdsByCatIdWithSub($cid,20);
 		$this->render('case',array(
 			'dataProvider'=>$dataProvider,
 			'title'=>$this->getCatalog($cid)->name,
@@ -95,6 +95,33 @@ class ProdController extends Controller
 			    'pageSize'=>$page,
 			 ),
 		));
+	}
+	
+	/*
+	 * query with sub catalog
+	 */
+	private function getProdsByCatIdWithSub($catid,$page){
+		$sql = "SELECT id, catid, title, content, image_url, description, create_date";
+		$sql .= " FROM t_ac_prod t";
+		$sql .= " where t.catid = ".$catid;
+		$sql .= " union";
+		$sql .= " SELECT id, catid, title, content, image_url, description, create_date";
+		$sql .= " FROM t_ac_prod t";
+		$sql .= " where t.catid in";
+		$sql .= " (SELECT r.sid";
+		$sql .= " FROM t_ac_catalog_rel r";
+		$sql .= " where r.pid=".$catid.")";
+		$sql .= " order by id desc";
+
+		$conn=Yii::app()->db;
+		$command = $conn->createCommand($sql);
+		$rows=$command->queryAll();
+		
+		return new CArrayDataProvider($rows, array(
+             'pagination'=>array(
+                 'pageSize'=>$page,
+             ),
+         ));
 	}
 	
 	public function loadModel($id){

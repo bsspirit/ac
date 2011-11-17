@@ -3,12 +3,16 @@ class picWidget extends CWidget
 {    
 	public $dataProvider;
 	public $rows;
+	public $total;
+	public $size;
 	
     public function init()
     {
     	//当视图中执行$this->beginWidget()时候会执行这个方法
         //可以在这里进行查询数据操作
     	$this->rows = $this->dataProvider->getData();
+    	$this->total = 40;//$this->dataProvider->
+    	$this->size = 10;
     }
  
     public function run()
@@ -19,6 +23,8 @@ class picWidget extends CWidget
         //protected/widgets/views/test.php
         $this->render('pic', array(
             'rows'=>$this->rows,
+            'total'=>$this->total,
+            'size'=>$this->size,
         ));
     }
 }

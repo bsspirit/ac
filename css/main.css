@@ -196,6 +196,8 @@ div.search-form {
 .l{float:left;}
 .r{float:right;}
 .c{clear:both;}
+.lline{text-align:left;}
+.rline{text-align:right;}
 .w80{width:80px;}
 .w160{width:160px;}
 .h150{height:150px;}

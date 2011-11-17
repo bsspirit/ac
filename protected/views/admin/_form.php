@@ -44,9 +44,9 @@ var editor_content;
 var editor_desc;
 KindEditor.ready(function(K) {
 	editor_content = K.create('textarea[name="content"]', {
-		uploadJson : 'upload',
+		uploadJson : path+'/admin/upload',
 		fileManagerJson : 'manager',
-		allowFileManager : true
+		allowFileManager : false
 	});
 
 	editor_desc = K.create('textarea[name="description"]', {

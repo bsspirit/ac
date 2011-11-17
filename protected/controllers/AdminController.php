@@ -14,18 +14,10 @@ class AdminController extends Controller
 	public function accessRules()
 	{
 		return array(
-//			array('allow',  // allow all users to perform 'index' and 'view' actions
-//				'actions'=>array('index','view'),
-//				'users'=>array('*'),
-//			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','create','update','admin','delete','image'),//'view'
+				'actions'=>array('index','create','update','admin','delete','image','upload'),//'view'
 				'users'=>array('@'),
 			),
-//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-//				'actions'=>array('admin','delete'),
-//				'users'=>array('admin'),
-//			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -174,11 +166,9 @@ class AdminController extends Controller
 	public function actionImage()
 	{
 		$form = new UploadForm;
-		
 		$folder = '/upfiles/image/';
 		$id = $_REQUEST['pid'];
 		$model = $this->loadModel($id);
-		
 		if (isset($_POST['UploadForm'])) {
 	        if ($form->validate()) {
 	            $form->image = CUploadedFile::getInstance($form, 'image');
@@ -190,14 +180,78 @@ class AdminController extends Controller
 	            $model->save(false);
 	        }
 	    }
-		
 		$this->render('image',array(
 			'model'=>$model,
 			'form'=>$form,
 		));
 	}
 	
-	public function actionManager(){
+	public function actionUpload(){
+		$php_url = Yii::app()->request->baseUrl;
+		$folder = '/upfiles/image2/';
 		
+		$ext_arr = array(//定义允许上传的文件扩展名
+			'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
+			'flash' => array('swf', 'flv'),
+			'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
+			'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
+		);
+		
+		$max_size = 1024*1024;
+		$save_path=realpath('.').$folder;//文件保存目录
+		$save_url = $php_url . $folder;//文件保存目录URL
+
+    	//有上传文件时
+		if (empty($_FILES) === false) {
+			$file_name = $_FILES['imgFile']['name'];//原文件名
+			$tmp_name = $_FILES['imgFile']['tmp_name'];//服务器上临时文件名
+			$file_size = $_FILES['imgFile']['size'];//文件大小
+			
+			if (!$file_name) {//检查文件名
+				echo "请选择文件。";exit;
+			}
+			
+			if (is_dir($save_path) === false) {//检查目录
+				echo "上传目录不存在。";exit;
+			}
+			
+			if (is_writable($save_path) === false) {//检查目录写权限
+				echo "上传目录没有写权限。";exit;
+			}
+
+			if (is_uploaded_file($tmp_name) === false) {//检查是否已上传
+				echo "临时文件可能不是上传文件。";exit;
+			}
+			
+			if ($file_size > $max_size) {//检查文件大小
+				echo "上传文件大小超过1MB限制。";exit;
+			}
+
+			$dir_name = empty($_REQUEST['dir']) ? 'image' : trim($_REQUEST['dir']); 
+			if (empty($ext_arr[$dir_name])) {//检查目录名
+				echo "目录名不正确。";exit;
+			}
+			
+			//获得文件扩展名
+			$temp_arr = explode(".", $file_name);
+			$file_ext = array_pop($temp_arr);
+			$file_ext = trim($file_ext);
+			$file_ext = strtolower($file_ext);
+			
+			$new_file_name = date("YmdHis") . '_' . rand(1, 100) . '.' . $file_ext;//新文件名
+			$file_path = $save_path . $new_file_name;//移动文件
+
+			if (move_uploaded_file($tmp_name, $file_path) === false) {
+				echo "上传文件失败。";exit;
+			}
+			
+			chmod($file_path, 0644);
+			$file_url = $save_url . $new_file_name;
+			
+			header('Content-type: text/html; charset=UTF-8');
+			$json = array('error' => 0, 'url' => $file_url);
+			echo CJSON::encode($json);
+			Yii::app()->end(); 
+		}
 	}
 }

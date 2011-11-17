@@ -7,7 +7,6 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	'menu'=>array('cid'=>4),
 	'contact'=>array(), 
-	'intro'=>array(),
 	'friend'=>array(),
 );
 ?>
@@ -17,8 +16,14 @@ $this->menu=array(
 	 	<strong class="name"><?php echo $title?></strong>
 	 </div>
 	 <div class="content">
-		<?php $this->widget('application.widgets.picWidget',array(
-			'dataProvider'=>$dataProvider,
-		)); ?>
+		<div class="view">
+			<ul class="pic_ul">
+				<?php $this->widget('zii.widgets.CListView', array(
+					'dataProvider'=>$dataProvider,
+					'itemView'=>'_pic_view',
+				)); ?>
+			</ul>
+			<div class="c"></div>
+		</div>
 	 </div> 
 </div>

@@ -49,7 +49,7 @@ class ProdController extends Controller
 		));
 	}
 	/*
-	 * 施工安装,5
+	 * 工程案例,5
 	 */
 	public function actionCase($cid=5)
 	{

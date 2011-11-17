@@ -1,5 +1,4 @@
 <div class="view">
-	<p class="rline" style="margin-right:10px;">第 1-2 条, 共 <?php echo $total?> 条.</p>
 	<ul class="pic_ul">
 	<?php foreach($rows as $row){?>
 		<li class="l w160 h150">

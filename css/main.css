@@ -223,7 +223,7 @@ div.search-form {
 #footer .footer-content .copyright{float:left;margin:20px 5px;line-height:25px;}
 #footer .footer-content .link{float:left;margin:20px;line-height:25px;}
 
-.mybox{background:url("bg.png") repeat scroll 0 0 #FFFFFF;border:solid 1px #dfdfdf;text-align:left;margin-bottom:20px;}
+.mybox{background:url("bg.png") repeat scroll 0 0 #FFFFFF;border:solid 1px #dfdfdf;text-align:left;margin-bottom:15px;}
 .mybox .title{margin:10px 5px;padding-left:30px;background-image:url("box_logo.jpg");line-height:30px;}
 .mybox .title .name{font-size: 14px;margin-left:4px;}
 .mybox .content{line-height:20px;margin:8px 5px 5px;padding:5px;}

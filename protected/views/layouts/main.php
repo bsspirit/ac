@@ -25,6 +25,8 @@
 	<script type="text/javascript" src="<?php echo $basepath ?>/js/nav/jquery-latest.js"></script>
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
+	<?php if(Yii::app()->user->isGuest){ ?>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-22898039-3']);
@@ -36,6 +38,7 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
+	<?php } ?>
 	
 </head>
 
@@ -44,7 +47,7 @@
 <div id="header1">
 	<div class="header-content">
 		<div class="logo">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"/>
+			<img src="<?php echo $basepath?>/images/logo.png"/>
 		</div>
 		<div class="logo-link">
 			[<a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ac-999.com');">设为首页</a>] 
@@ -91,17 +94,19 @@
 	<div id="footer">
 		<div class="footer-content">
 			<div class="logo">
-				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo2.png"/>
+				<img src="<?php $basepath ?>/images/logo2.png"/>
 			</div>
 			<div class="copyright">
 			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备07057890号<br/>
 				电话：010-67186799&nbsp;&nbsp;67187099&nbsp;&nbsp;&nbsp;&nbsp;Email:ac_carrier@sina.com<br/>
 			</div>
 			<div class="link">
+				<?php if(Yii::app()->user->isGuest){ ?>
 				<script type="text/javascript">
 				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4e6b47b298cac1b0c8dd48673d00af0f' type='text/javascript'%3E%3C/script%3E"));
 				</script>
+				<?php }?>
 			</div>
 		</div>
 	</div>

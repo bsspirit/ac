@@ -97,7 +97,7 @@
 				<img src="<?php $basepath ?>/images/logo2.png"/>
 			</div>
 			<div class="copyright">
-			  	北京奥诚兴业科技发展有限公司 版权所有 京ICP备07057890号<br/>
+			  	北京奥诚兴业科技发展有限公司 版权所有 <!-- 京ICP备07057890号 --><br/>
 				电话：010-67186799&nbsp;&nbsp;67187099&nbsp;&nbsp;&nbsp;&nbsp;Email:ac_carrier@sina.com<br/>
 			</div>
 			<div class="link">

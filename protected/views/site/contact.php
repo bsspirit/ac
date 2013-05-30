@@ -20,7 +20,7 @@ $this->menu=array(
 		<p class="indent">Tel:010-67186799  010-67187099</p>
 		<p class="indent">Fax:010-67187019
 		<p class="indent">联系人：杨小姐</p>
-		<p class="indent">QQ：1139355159</p>
+		<p class="indent">QQ：123269482</p>
 		<p>&nbsp;</p>
 		<p><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/map.png"/></p>
 		<p>&nbsp;</p>

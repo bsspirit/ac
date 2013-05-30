@@ -20,8 +20,8 @@ $this->menu=array(
 		<p>Tel:67186799  杨小姐</p> 
 		<p>Fax:67187099</p> 
 		<p>Email:ac_carrier2001@sina.com</p>  
-		<p>网址:www.beijing-carrier.com </p> 
-		<p>请将个人简历（附近期生活照片1张）以Email方式发至公司邮箱。</p>  
+		<p>网址:<a href="http://www.ac-999.com" target="_blank">www.ac-999.com</a> </p> 
+		<p>请将个人简历（附近期生活照片1张）以Email方式发至公司邮箱。(注明招聘)</p>  
 		<p>面试时间待回复通知。 </p> 
 	 	<p>&nbsp;</p>
 	 	

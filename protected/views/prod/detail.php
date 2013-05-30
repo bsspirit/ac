@@ -43,9 +43,11 @@ $this->menu=array(
 	 </div>
 	 <div class="content">
 		发布日间：<?php echo $model->create_date?><br/><br/>
+		<!--
 		<?php if(!empty($model->image_url)){?>
 		<p><img onload="if(this.width>400) {this.width=400;}" border="0" src="<?php echo Yii::app()->request->baseUrl.$model->image_url ?>"/></p>
 		<?php }?>
+		-->
 		<br/>
 		<p>
 			<?php echo $model->content?>

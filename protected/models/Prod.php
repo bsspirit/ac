@@ -11,6 +11,7 @@
  * @property string $image_url
  * @property string $description
  * @property string $create_date
+ * @property integer $show_image
  */
 class Prod extends CActiveRecord
 {
@@ -28,13 +29,13 @@ class Prod extends CActiveRecord
 	{
 		return array(
 			array('catid, title , content', 'required'),
-			array('catid', 'numerical', 'integerOnly'=>true),
+			array('catid,show_image', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>32),
 			array('image_url', 'length', 'max'=>256),
 			array('description', 'length', 'max'=>1024),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, catid, title, content, image_url, description, create_date', 'safe', 'on'=>'search'),
+			array('id, catid, title, content, image_url, description, create_date,show_image', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +56,7 @@ class Prod extends CActiveRecord
 			'image_url' => '图片URL',
 			'description' => '备注',
 			'create_date' => '创建时间',
+			'show_image' => '标题图片'
 		);
 	}
 
@@ -69,6 +71,7 @@ class Prod extends CActiveRecord
 		$criteria->compare('image_url',$this->image_url,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('create_date',$this->create_date,true);
+		$criteria->compare('show_image',$this->show_image,true);
 		$criteria->order = 'id desc';
 
 		return new CActiveDataProvider($this, array(

@@ -18,13 +18,13 @@ return array(
 		'application.util.editor.*',
 	),
 	'defaultController' => 'default',
-	#'modules'=>array(
-	#	'gii'=>array(
-	#		'class'=>'system.gii.GiiModule',
-	#		'password'=>'gii',
-	#		'ipFilters'=>array('127.0.0.1','::1'),
-	#	),
-	#),
+	'modules'=>array(
+		'gii'=>array(
+			'class'=>'system.gii.GiiModule',
+			'password'=>'gii',
+			'ipFilters'=>array('127.0.0.1','::1'),
+		),
+	),
 
 	'components'=>array(
 		'user'=>array(

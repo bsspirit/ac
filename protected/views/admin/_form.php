@@ -18,6 +18,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'show_image'); ?>
+		<?php echo $form->radioButtonList($model,'show_image',array('1'=>'显示','0'=>'不显示'),array('separator'=>'&nbsp;&nbsp;&nbsp;&nbsp;', 'labelOptions'=>array('style'=>'display:inline')));?>
+		<div class="row">
+		<?php if(!empty($model['image_url'])){?>
+		<img width="200px" src="<?php echo Yii::app()->request->baseUrl.$model['image_url']?>"/>
+		<?php } else {?>
+		<img width="200px" src="/images/empty.png"/>
+		<?php } ?>
+		</div>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
 		<textarea name="content" style="width:800px;height:400px;visibility:hidden;"><?php echo $model->content?></textarea>
 		<?php echo $form->error($model,'content'); ?>

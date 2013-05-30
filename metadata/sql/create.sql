@@ -22,3 +22,7 @@ CREATE TABLE t_ac_catalog_rel(
 	sid int not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE t_ac_prod ADD COLUMN show_image BOOLEAN DEFAULT TRUE;
+UPDATE t_ac_prod SET image_url='/images/empty.png' WHERE image_url='http://abc.com/a.jpg';
+ALTER TABLE t_ac_prod CHANGE image_url image_url VARCHAR(256) NOT NULL DEFAULT '/images/empty.png';
+

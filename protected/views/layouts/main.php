@@ -98,7 +98,7 @@
 			</div>
 			<div class="copyright">
 			  	北京奥诚兴业科技发展有限公司 版权所有 <a href="http://www.miibeian.gov.cn">京ICP备12034712号-1</a><br/>
-				电话：010-67186799&nbsp;&nbsp;67187099&nbsp;&nbsp;&nbsp;&nbsp;Email:ac_carrier@sina.com<br/>
+				电话：010-67186799&nbsp;&nbsp;67187099&nbsp;&nbsp;&nbsp;&nbsp;Email:ac_carrier@sina.com&nbsp;&nbsp;&nbsp;&nbsp;开发团队：<a href="http://blog.fens.me" target="_blank">bsspirit</a><br/>
 			</div>
 			<div class="link">
 				<?php if(Yii::app()->user->isGuest){ ?>
